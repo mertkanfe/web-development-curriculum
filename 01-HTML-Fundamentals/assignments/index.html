@@ -1,0 +1,78 @@
+<!-- Ödev 3
+Bu ödevimizde sevdiğimiz bir yemek ya da tatlının tarifini öğrendiğimiz bir web sitesini, HTML etiketlerini kullanarak yazmaya çalışacağız.
+Kullanılması Zorunlu HTML Etiketleri
+Öğrencilerin projelerinde şu yapıları mutlaka kullanması gerekir:
+
+Yapısal Etiketler: <!DOCTYPE html>, <html>, <head>, <body>, <meta charset="UTF-8">
+
+Metin Biçimlendirme: <h1> (Ana başlık), <h2> (Alt başlıklar), <p> (Paragraflar)
+
+Listeler: <ul> (Malzemeler için sırasız liste), <ol> (Hazırlanış için sıralı liste)
+
+Vurgu: <strong> (Kalın yazı) veya <em> (İtalik yazı)
+
+Medya ve Link: <img> (Yemek fotoğrafı), <a> (Kaynak siteye giden bağlantı)
+
+Tablo (Opsiyonel/Ek Puan): <table>, <tr>, <td> (Besin değerleri veya hazırlama süreleri için)
+-->
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Benim Tarifim: Çikolatalı Sufle</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #fff5e6; color: #333; margin: 20px; }
+        .recipe-card { background: white; max-width: 600px; margin: auto; padding: 20px; border: 2px solid #d35400; border-radius: 15px; }
+        img { max-width: 100%; height: auto; border-radius: 10px; }
+        .timer { color: #e67e22; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="recipe-card">
+        <h1>🍫 Akışkan Çikolatalı Sufle</h1>
+        <p>Fransız mutfağının en sevilen tatlılarından birini evde yapmaya ne dersiniz?</p>
+
+        <img src="" alt="Sufle Görseli">
+
+        <p class="timer">⏱ Hazırlama Süresi: 10 Dakika | 🌡 Pişirme: 8 Dakika</p>
+
+        <h2>Gerekli Malzemeler</h2>
+        <ul>
+            <li><strong>100 gr</strong> bitter çikolata</li>
+            <li><strong>2 adet</strong> yumurta</li>
+            <li><strong>2 yemek kaşığı</strong> şeker</li>
+            <li><strong>50 gr</strong> tereyağı</li>
+            <li><strong>1 yemek kaşığı</strong> un</li>
+        </ul>
+
+        <h2>Hazırlanışı</h2>
+        <ol>
+            <li>Tereyağını ve bitter çikolatayı benmari usulü eritin.</li>
+            <li>Ayrı bir kapta yumurta ve şekeri beyazlaşana kadar çırpın.</li>
+            <li>Eriyen çikolata karışımını yumurtalara yavaşça ekleyin.</li>
+            <li>Unu ekleyip spatulayla söndürmeden karıştırın.</li>
+            <li>Yağlanmış kaplara döküp <em>200 derece</em> fırında 8 dakika pişirin.</li>
+        </ol>
+
+        <h2>Besin Değerleri</h2>
+        <table border="1" width="100%" style="border-collapse: collapse; text-align: center;">
+            <tr>
+                <th>Enerji (kcal)</th>
+                <th>Karbonhidrat</th>
+                <th>Protein</th>
+            </tr>
+            <tr>
+                <td>350 kcal</td>
+                <td>25g</td>
+                <td>6g</td>
+            </tr>
+        </table>
+
+        <br>
+        <p>Daha fazla tarif için <a href="" target="_blank">buraya tıklayabilirsiniz.</a></p>
+    </div>
+
+</body>
+</html>
