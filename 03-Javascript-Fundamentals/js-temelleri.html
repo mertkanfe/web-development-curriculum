@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Temelleri - İlk Kodlar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: #f7df1e;
+            margin: 0;
+            font-size: 2.8em;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #f7df1e;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        .analogy, .info-box, .warning-box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .analogy {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #ebf5ff;
+            border-left: 5px solid #3182ce;
+        }
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #f6e05e;
+            font-weight: bold;
+        }
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+        ul {
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 10px; }
+        
+        /* Çıktı Yöntemleri Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            border-color: #3182ce;
+        }
+        .card h3 {
+            color: #2b6cb0;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ders 2: JavaScript'e İlk Adım</h1>
+        <p>Kodları Nereye Yazıyoruz, Çıktıları Nasıl Görüyoruz ve Değişkenler Nedir?</p>
+    </header>
+
+    <section>
+        <h2>1. JavaScript Kodlarını Nereye Yazıyoruz?</h2>
+        <p>Tıpkı CSS'te olduğu gibi, JavaScript kodlarımızı sitemize eklemenin birkaç yolu vardır. En profesyonel ve düzenli olanı, kodlarımızı <strong>harici (external) bir dosyada</strong> tutmaktır.</p>
+        
+        <ul>
+            <li><strong>Harici Dosya (Önerilen):</strong> <code>app.js</code> adında bir dosya oluştururuz ve HTML dosyamızın en altına, <code>&lt;/body&gt;</code> etiketinden hemen önce şu kodu ekleriz: <br>
+            <div class="code-block">&lt;script src="app.js"&gt;&lt;/script&gt;</div>
+            </li>
+        </ul>
+
+        <div class="warning-box">
+            <strong>Neden &lt;/body&gt; etiketinden hemen önce?</strong><br>
+            Çünkü tarayıcılar kodları yukarıdan aşağıya doğru okur. Eğer JavaScript'i en üstte (Head içinde) yüklerseniz, HTML sayfadaki resimler ve butonlar henüz yüklenmediği için JavaScript hata verebilir. JS dosyası en son yüklenmelidir ki sahnedeki tüm oyuncular (HTML) yerini almış olsun!
+        </div>
+    </section>
+
+    <section>
+        <h2>2. Bilgisayarla Konuşma: Çıktı Alma Yöntemleri</h2>
+        <p>Yazdığımız kodların çalışıp çalışmadığını görmek için sonuçları bir yere yazdırmamız gerekir. İşte en çok kullandığımız 3 yöntem:</p>
+
+        <div class="grid-container">
+            <div class="card">
+                <h3>1. console.log() 🕵️‍♂️</h3>
+                <p><strong>Yazılımcıların En İyi Dostu!</strong> Ekranda görünmez, sadece tarayıcının "Geliştirici Seçenekleri -> Konsol" sekmesinde görünür. Hataları bulmak için kullanırız.</p>
+                <div class="code-block">
+<span class="comment">// Sadece bizim görebileceğimiz gizli mesaj</span><br>
+console.log("Sistem başarıyla yüklendi!");
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>2. alert() 🔔</h3>
+                <p>Sayfanın en üstünden aşağı doğru sarkan, kullanıcı "Tamam" diyene kadar gitmeyen o meşhur uyarı (pop-up) pencereleridir.</p>
+                <div class="code-block">
+<span class="comment">// Kullanıcının yüzüne çarpan mesaj</span><br>
+alert("Şifrenizi yanlış girdiniz!");
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>3. innerHTML 📝</h3>
+                <p>HTML'in içine doğrudan müdahale etme yöntemidir. Sitedeki bir yazıyı (örneğin bir başlığı) anında değiştirmek için kullanırız.</p>
+                <div class="code-block">
+<span class="comment">// Ekrana yazı yazdırma</span><br>
+document.getElementById("baslik").innerHTML = "Yeni Başlık!";
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Hafızayı Kullanmak: Değişkenler (Variables)</h2>
+        <p>Programlama yaparken bazı bilgileri (kullanıcının adı, oyundaki skoru, bir ürünün fiyatı) hafızada tutmamız gerekir. İşte bu bilgileri sakladığımız alanlara <strong>Değişken</strong> diyoruz.</p>
+        
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Etiketli Kutular 📦</strong><br>
+            Değişkenleri boş kutular olarak düşünün. Kutunun üzerine bir etiket yapıştırırsınız (İsim) ve içine bir eşya koyarsınız (Değer). İhtiyacınız olduğunda o kutuyu çağırır ve içindeki eşyayı kullanırsınız.
+        </div>
+
+        <h3>Modern JavaScript'te Kutuları Nasıl Tanımlarız?</h3>
+        <p>Eskiden <code>var</code> kullanılırdı, ancak günümüzde modern ve daha güvenli olan <code>let</code> ve <code>const</code> kullanıyoruz.</p>
+
+        <ul>
+            <li><strong><span style="color:#e53e3e;">let</span> : Değişebilen Kutular</strong><br>
+                Eğer kutunun içindeki değeri daha sonra değiştirecekseniz <code>let</code> kullanırsınız. Örneğin bir oyundaki puanınız sürekli değişir.
+                <div class="code-block">
+let <span class="highlight">oyuncuSkoru</span> = 0; <span class="comment">// Başlangıçta skor 0</span><br>
+oyuncuSkoru = 10; <span class="comment">// Canavar yenildi, skor artık 10 oldu!</span>
+                </div>
+            </li>
+            
+            <li><strong><span style="color:#3182ce;">const</span> : Kilitli Kasalar (Sabitler)</strong><br>
+                Constant (Sabit) kelimesinden gelir. İçine bir değer koyduğunuzda bir daha asla değiştiremezsiniz. TC Kimlik Numaranız veya Doğum Tarihiniz gibi!
+                <div class="code-block">
+const <span class="highlight">dogumYili</span> = 2008;<br>
+<span class="comment">// dogumYili = 2009; // BUNA İZİN VERMEZ! HATA VERİR!</span>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Kutuların İçine Ne Koyabiliriz? (Veri Tipleri)</h2>
+        <p>Oluşturduğumuz bu kutuların içine farklı türlerde veriler koyabiliriz. En temel 3 veri tipi şunlardır:</p>
+        
+        <div class="code-block">
+<span class="comment">// 1. String (Metin Verileri): Çift veya tek tırnak içinde yazılırlar.</span><br>
+let ogrenciAdi = "Ahmet";<br>
+let favoriDers = 'Matematik';<br><br>
+
+<span class="comment">// 2. Number (Sayısal Veriler): Tırnak KULLANILMAZ! Sadece rakam.</span><br>
+let yas = 16;<br>
+let sicaklik = 25.5; <span class="comment">// Ondalıklı sayılar nokta ile yazılır</span><br><br>
+
+<span class="comment">// 3. Boolean (Mantıksal Veriler): Sadece "true" (doğru) veya "false" (yanlış) olabilir.</span><br>
+let liseMezunuMu = false;<br>
+let oyunBittiMi = true;
+        </div>
+
+        <div class="info-box">
+            <strong>Altın Kural:</strong> Eğer bir sayıyı tırnak içine alırsanız ("16" gibi), bilgisayar onu sayı olarak değil, bir "metin" (String) olarak algılar ve onunla matematiksel toplama işlemi yapamazsınız!
+        </div>
+    </section>
+
+</body>
+</html>
