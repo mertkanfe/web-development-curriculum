@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 4: JavaScript'te Döngüler (Loops)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: #f7df1e;
+            margin: 0;
+            font-size: 2.8em;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #f7df1e;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        .analogy, .info-box, .warning-box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .analogy {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #ebf5ff;
+            border-left: 5px solid #3182ce;
+        }
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #f6e05e;
+            font-weight: bold;
+        }
+        .keyword {
+            color: #f56565;
+            font-weight: bold;
+        }
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+        ul {
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ders 4: Yorulmayan İşçiler</h1>
+        <p>Bilgisayara Tekrar Etmeyi Öğretmek: Döngüler (Loops)</p>
+    </header>
+
+    <section>
+        <h2>1. Neden Döngülere İhtiyacımız Var?</h2>
+        <p>Yazılımcıların en sevdiği kurallardan biri <strong>DRY (Don't Repeat Yourself - Kendini Tekrar Etme)</strong> prensibidir. Eğer aynı kodu kopyala-yapıştır yapıyorsanız, muhtemelen orada bir döngü kullanmalısınız.</p>
+        
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Ceza Tahtası 🏫</strong><br>
+            Diyelim ki derste yaramazlık yaptınız ve öğretmen size tahtaya 100 kere <em>"Bir daha derste konuşmayacağım"</em> yazma cezası verdi. İnsan olarak bunu yazmak saatler sürer ve eliniz yorulur. Ama bilgisayarlar asla yorulmaz! Döngüler sayesinde bilgisayara "Şu cümleyi tahtaya 100 kere yaz" emrini sadece 3 satır kodla verebiliriz.
+        </div>
+    </section>
+
+    <section>
+        <h2>2. En Popüler Yöntem: For Döngüsü</h2>
+        <p>Kaç kere tekrar yapacağımızı <strong>önceden biliyorsak</strong> en çok <code>for</code> döngüsünü kullanırız. For döngüsü 3 temel aşamadan oluşur:</p>
+        <ul>
+            <li><strong>Başlangıç:</strong> Nereden saymaya başlayacağız?</li>
+            <li><strong>Bitiş Koşulu:</strong> Nereye kadar sayacağız? (Bu koşul doğru olduğu sürece döngü çalışır).</li>
+            <li><strong>Artış Miktarı:</strong> Sayarken kaçar kaçar artıracağız?</li>
+        </ul>
+
+        <div class="info-box">
+            <strong>Kısa Yol (++) Nedir?</strong><br>
+            Kodlamada bir sayıyı 1 artırmak çok sık yapılan bir işlemdir. <code>sayi = sayi + 1</code> yazmak yerine kısaca <code>sayi++</code> yazarız. Aynı şekilde 1 azaltmak için <code>sayi--</code> kullanılır.
+        </div>
+
+        <p>Şimdi ekrana 5 kere "Merhaba Lise!" yazdıralım:</p>
+        
+        <div class="code-block">
+<pre>
+<span class="comment">// Ekrana 5 defa yazı yazdıran döngü</span>
+<span class="keyword">for</span> (<span class="keyword">let</span> i = 1; i &lt;= 5; i++) {
+    console.log(i + ". Merhaba Lise! 👋");
+}
+
+<span class="comment">/* Konsol Çıktısı: 
+1. Merhaba Lise! 👋
+2. Merhaba Lise! 👋
+3. Merhaba Lise! 👋
+4. Merhaba Lise! 👋
+5. Merhaba Lise! 👋
+*/</span>
+</pre>
+        </div>
+        <p><em>Not: Döngülerde sayacı tutmak için genellikle "index" kelimesinin kısaltması olan <strong>i</strong> harfi kullanılır.</em></p>
+    </section>
+
+    <section>
+        <h2>3. Koşula Bağlı Tekrar: While Döngüsü</h2>
+        <p>Bazen bir işlemin kaç kere tekrar edeceğini önceden bilemeyiz. Sadece "Şu durum devam ettiği sürece (while) bunu yap" demek isteriz.</p>
+        
+        <p>Örneğin, bir sayı tahmin etme oyunu düşünün. Kullanıcının doğru sayıyı kaçıncı denemesinde bulacağını bilemeyiz. Belki 1., belki 50. deneme! Burada <code>while</code> imdadımıza yetişir.</p>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">let</span> benzin = 3;
+
+<span class="comment">// Benzin 0'dan büyük olduğu SÜRECE arabayı sür</span>
+<span class="keyword">while</span> (benzin &gt; 0) {
+    console.log("Araba yolda gidiyor... 🚗");
+    benzin--; <span class="comment">// Her adımda benzini 1 azalt</span>
+}
+
+console.log("Benzin bitti, araba durdu! 🛑");
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Aman Dikkat! Sonsuz Döngü (Infinite Loop) 💥</h2>
+        <p>Döngüler çok güçlüdür ama bir o kadar da tehlikeli olabilir. Eğer döngünüzün <strong>bitiş koşulu</strong> asla sağlanamazsa, döngü sonsuza kadar dönmeye devam eder.</p>
+
+        <div class="warning-box">
+            <strong>Bilgisayarınızı Dondurmayın!</strong><br>
+            Sonsuz bir döngüye giren program, bilgisayarınızın (veya tarayıcınızın) tüm hafızasını ve işlemci gücünü tüketir, sonunda tarayıcı çöker.
+        </div>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">let</span> sayi = 1;
+
+<span class="comment">// TEHLİKE: Bu kod bilgisayarı dondurur!</span>
+<span class="comment">// sayi hep 1 kalacağı için, 5'ten küçük olma şartı sonsuza kadar doğru olur.</span>
+<span class="keyword">while</span> (sayi &lt; 5) {
+    console.log("Bu yazı hiç durmayacak!");
+    <span class="comment">// sayi++ yazmayı UNUTTUK!</span>
+}
+</pre>
+        </div>
+        <p>Her zaman döngünüzü kıracak veya bitirecek bir artış/azalış işlemi eklediğinizden emin olun!</p>
+    </section>
+
+</body>
+</html>

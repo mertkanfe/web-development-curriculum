@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 3: JavaScript'te Karar Verme ve Operatörler</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: #f7df1e;
+            margin: 0;
+            font-size: 2.8em;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #f7df1e;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        .analogy, .info-box, .warning-box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .analogy {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #ebf5ff;
+            border-left: 5px solid #3182ce;
+        }
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #f6e05e;
+            font-weight: bold;
+        }
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+        ul {
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 10px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background-color: #edf2f7;
+            color: #2d3748;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ders 3: Kodlara Zeka Katmak</h1>
+        <p>Matematiksel Operatörler ve If-Else (Karar) Yapıları</p>
+    </header>
+
+    <section>
+        <h2>1. JavaScript'in Hesap Makinesi: Operatörler</h2>
+        <p>Bilgisayarlar temelde devasa ve çok hızlı hesap makineleridir. JavaScript'te sayısal değerler (Number) üzerinde işlem yapmak için <strong>Aritmetik Operatörleri</strong> kullanırız.</p>
+        
+        <table>
+            <tr>
+                <th>Operatör</th>
+                <th>Ne İşe Yarar?</th>
+                <th>Örnek</th>
+            </tr>
+            <tr>
+                <td><strong>+</strong></td>
+                <td>Toplama</td>
+                <td><code>5 + 3 = 8</code></td>
+            </tr>
+            <tr>
+                <td><strong>-</strong></td>
+                <td>Çıkarma</td>
+                <td><code>10 - 2 = 8</code></td>
+            </tr>
+            <tr>
+                <td><strong>*</strong></td>
+                <td>Çarpma</td>
+                <td><code>4 * 2 = 8</code></td>
+            </tr>
+            <tr>
+                <td><strong>/</strong></td>
+                <td>Bölme</td>
+                <td><code>16 / 2 = 8</code></td>
+            </tr>
+            <tr>
+                <td><strong>%</strong></td>
+                <td>Mod Alma (Bölümünden Kalan)</td>
+                <td><code>10 % 3 = 1</code> (10'u 3'e bölersek kalan 1'dir)</td>
+            </tr>
+        </table>
+
+        <div class="info-box">
+            <strong>İpucu: Mod (%) Nerede Kullanılır?</strong><br>
+            Bir sayının tek mi yoksa çift mi olduğunu bulmak için harikadır! Eğer bir sayının 2'ye bölümünden kalan (Mod 2) 0 ise o sayı çifttir, 1 ise tektir.
+        </div>
+    </section>
+
+    <section>
+        <h2>2. Karşılaştırma Zamanı: Kim Daha Büyük?</h2>
+        <p>Karar verebilmek için önce durumları karşılaştırmamız gerekir. Karşılaştırma operatörleri bize her zaman <code>true</code> (Doğru) veya <code>false</code> (Yanlış) cevabını verir.</p>
+
+        <ul>
+            <li><strong>&gt;</strong> (Büyüktür) ve <strong>&lt;</strong> (Küçüktür)</li>
+            <li><strong>&gt;=</strong> (Büyük Eşittir) ve <strong>&lt;=</strong> (Küçük Eşittir)</li>
+            <li><strong>==</strong> (Eşittir) ve <strong>!=</strong> (Eşit Değildir)</li>
+        </ul>
+
+        <div class="warning-box">
+            <strong>Dikkat! Eşittir (==) ve Sıkı Eşittir (===) Farkı</strong><br>
+            JavaScript'te <code>==</code> sadece değerlere bakar. Yani <code>5 == "5"</code> derseniz, biri sayı biri metin olsa bile size <strong>true</strong> der.<br>
+            Ancak <code>===</code> (3 eşittir) hem değere hem de veri tipine bakar. <code>5 === "5"</code> derseniz, tipleri farklı olduğu için <strong>false</strong> der. Güvenli kod yazmak için her zaman <strong>===</strong> kullanmalıyız!
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Mantıksal Operatörler (Ve / Veya)</h2>
+        <p>Bazen birden fazla şartın aynı anda sağlanmasını isteriz. Burada devreye mantıksal operatörler girer.</p>
+
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Sınıf Geçme Kuralı</strong><br>
+            <ul>
+                <li><strong>&amp;&amp; (VE - AND):</strong> İki şart da doğru olmak ZORUNDA. <em>"Sınıfı geçmek için ortalaman 50'den büyük olmalı <strong>VE</strong> devamsızlığın 10 günden az olmalı."</em> İkisinden biri bozulursa sınıfta kalırsın (false).</li>
+                <li><strong>|| (VEYA - OR):</strong> İki şarttan BİRİ doğru olsa yeter. <em>"Hafta sonu sinemaya gideceğiz, hava güneşli olursa <strong>VEYA</strong> yağmur yağmazsa."</em> İki durumdan biri kurtarıyorsa sonuç başarılıdır (true).</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Programlamanın Kalbi: If - Else Yapıları</h2>
+        <p>İşte bilgisayara zeka kattığımız an! <strong>If (Eğer)</strong> ve <strong>Else (Değilse)</strong> komutları, programımızın yol ayrımlarında hangi yoldan gideceğine karar vermesini sağlar.</p>
+        
+        
+
+[Image of programming if else flowchart diagram]
+
+
+        <p>Diyelim ki bir kullanıcının ehliyet alıp alamayacağını kontrol eden bir program yazıyoruz. Kuralımız: Yaş 18'den büyük veya eşitse alabilir, değilse alamaz.</p>
+
+        <div class="code-block">
+<pre>
+let <span class="highlight">yas</span> = 16;
+
+<span class="comment">// EĞER yaş 18'den büyük veya eşitse bu bloğu çalıştır</span>
+if (yas &gt;= 18) {
+    console.log("Tebrikler, ehliyet alabilirsiniz! 🚗");
+} 
+<span class="comment">// DEĞİLSE bu bloğu çalıştır</span>
+else {
+    console.log("Maalesef ehliyet alamazsınız. Biraz daha büyümeniz lazım. 🚶‍♂️");
+}
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>5. Birden Fazla Seçenek: Else If</h2>
+        <p>Hayat her zaman siyah veya beyaz (If/Else) değildir. Bazen aradaki gri tonlara (ikiden fazla seçeneğe) ihtiyaç duyarız. Sınav notuna göre harf notu hesaplayan bir sistem düşünelim:</p>
+
+        <div class="code-block">
+<pre>
+let sinavNotu = 75;
+
+if (sinavNotu &gt;= 90) {
+    console.log("Harika! Notunuz: A 🥇");
+} 
+else if (sinavNotu &gt;= 70) {
+    console.log("Tebrikler! Notunuz: B 🥈");
+} 
+else if (sinavNotu &gt;= 50) {
+    console.log("Geçtiniz! Notunuz: C 🥉");
+} 
+else {
+    console.log("Kaldınız! Notunuz: F 💥");
+}
+</pre>
+        </div>
+        <p><em>Not: Kodlar yukarıdan aşağı doğru okunur. Hangi koşul (şart) ilk olarak doğru çıkarsa, bilgisayar o aralığa girer ve diğerlerini okumadan atlar.</em></p>
+    </section>
+
+</body>
+</html>
