@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 5: JavaScript'te Diziler (Arrays)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: #f7df1e;
+            margin: 0;
+            font-size: 2.8em;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #f7df1e;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        .analogy, .info-box, .warning-box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .analogy {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #ebf5ff;
+            border-left: 5px solid #3182ce;
+        }
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #f6e05e;
+            font-weight: bold;
+        }
+        .keyword {
+            color: #f56565;
+            font-weight: bold;
+        }
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+        ul {
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ders 5: Veri Sepetleri</h1>
+        <p>Çoklu Bilgileri Bir Arada Tutmak: Diziler (Arrays)</p>
+    </header>
+
+    <section>
+        <h2>1. Dizi (Array) Nedir?</h2>
+        <p>Şu ana kadar öğrendiğimiz değişkenlerin (let, const) içine sadece tek bir bilgi koyabiliyorduk. Ancak gerçek hayatta veriler genellikle listeler halindedir. Örneğin bir sınıftaki öğrencilerin listesi, bir alışveriş sepetindeki ürünler veya bir oyunun en yüksek skorları...</p>
+        
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Okul Dolapları 🏫</strong><br>
+            Değişkenleri tek bir "kutu" gibi düşünürsek, <strong>Dizileri</strong> yan yana dizilmiş, üzerinde numaralar olan <strong>emanet dolapları</strong> gibi düşünebiliriz. Tek bir ana ismimiz vardır (Dolaplar) ama içinde birden fazla bölme bulunur. Her bölmeye farklı bir eşya koyabiliriz.
+        </div>
+        
+    </section>
+
+    <section>
+        <h2>2. Dizi Nasıl Oluşturulur?</h2>
+        <p>JavaScript'te dizi oluşturmak için köşeli parantez <code>[ ]</code> kullanırız. Verilerin arasına ise virgül koyarız.</p>
+
+        <div class="code-block">
+<pre>
+<span class="comment">// 1. Boş bir dizi oluşturmak</span>
+<span class="keyword">let</span> sepet = [];
+
+<span class="comment">// 2. İçinde veriler olan bir dizi oluşturmak</span>
+<span class="keyword">let</span> meyveler = ["Elma", "Muz", "Çilek", "Kivi"];
+
+<span class="comment">// Dizilerde farklı veri tiplerini aynı anda tutabiliriz</span>
+<span class="keyword">let</span> karisik = ["Mert", 26, <span class="keyword">true</span>];
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Elemanlara Erişmek (İndeks Kavramı)</h2>
+        <p>Dizinin içindeki bir elemana ulaşmak için o elemanın "adresini" bilmemiz gerekir. Yazılım dünyasında bu adrese <strong>İndeks (Index)</strong> denir.</p>
+
+        <div class="warning-box">
+            <strong>Kritik Kural: Saymaya Sıfırdan Başlarız! 0️⃣</strong><br>
+            Bilgisayarlar saymaya 1'den değil, 0'dan başlar. Yani dizinin ilk elemanının adresi 1 değil, <strong>0</strong>'dır.
+        </div>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">let</span> diller = ["HTML", "CSS", "JS"];
+
+console.log(diller[0]); <span class="comment">// Çıktı: HTML (Birinci eleman)</span>
+console.log(diller[1]); <span class="comment">// Çıktı: CSS (İkinci eleman)</span>
+console.log(diller[2]); <span class="comment">// Çıktı: JS (Üçüncü eleman)</span>
+
+<span class="comment">// Bir elemanı değiştirmek:</span>
+diller[1] = "Sass"; <span class="comment">// Artık CSS yerine Sass yazıyor!</span>
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Dizinin Boyutu: .length</h2>
+        <p>Dizinin içinde kaç tane eleman olduğunu her zaman bilmek isteriz. Bunun için dizinin yanına <code>.length</code> (uzunluk) özelliğini ekleriz.</p>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">let</span> ogrenciler = ["Ali", "Veli", "Ayşe", "Fatma"];
+console.log(ogrenciler.length); <span class="comment">// Çıktı: 4</span>
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>5. Diziler ve Döngülerin Gücü (Büyük Buluşma)</h2>
+        <p>Diziler ve döngüleri birleştirdiğimizde yazılımın asıl gücünü görürüz. Bir listedeki 1000 tane ismi tek tek yazdırmak yerine, bir döngüyle saniyeler içinde hepsini ekrana basabiliriz.</p>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">let</span> renkler = ["Kırmızı", "Mavi", "Yeşil", "Sarı", "Turuncu"];
+
+<span class="comment">// i sayacı 0'dan başlar, dizinin uzunluğuna kadar gider</span>
+<span class="keyword">for</span> (<span class="keyword">let</span> i = 0; i < renkler.length; i++) {
+    console.log((i + 1) + ". Renk: " + renkler[i]);
+}
+
+<span class="comment">/* Çıktı:
+1. Renk: Kırmızı
+2. Renk: Mavi
+...
+5. Renk: Turuncu
+*/</span>
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>6. Dizilere Eleman Ekleme ve Çıkarma</h2>
+        <p>Diziler yaşayan yapılardır, sonradan eleman ekleyebilir veya çıkarabiliriz.</p>
+        <ul>
+            <li><strong>.push() :</strong> Dizinin <u>sonuna</u> yeni bir eleman ekler.</li>
+            <li><strong>.pop() :</strong> Dizinin <u>sonundaki</u> elemanı siler.</li>
+            <li><strong>.unshift() :</strong> Dizinin <u>başına</u> eleman ekler.</li>
+            <li><strong>.shift() :</strong> Dizinin <u>başındaki</u> elemanı siler.</li>
+        </ul>
+
+        <div class="info-box">
+            <strong>Akılda Tutma Yöntemi:</strong> "Push" (itmek) komutuyla yeni bir kutuyu sıranın sonuna ittiğinizi hayal edin! "Pop" ise (patlatmak) sondaki kutuyu patlatıp yok etmek gibidir.
+        </div>
+    </section>
+
+</body>
+</html>
