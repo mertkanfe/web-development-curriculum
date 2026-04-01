@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 6: JavaScript'te Fonksiyonlar (Functions)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: #f7df1e;
+            margin: 0;
+            font-size: 2.8em;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #f7df1e;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        .analogy, .info-box, .warning-box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .analogy {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #ebf5ff;
+            border-left: 5px solid #3182ce;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #f6e05e;
+            font-weight: bold;
+        }
+        .keyword {
+            color: #f56565;
+            font-weight: bold;
+        }
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+        ul {
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ders 6: Kendi Komutlarımızı Oluşturma</h1>
+        <p>Kod Yazmayı Kolaylaştıran Paketler: Fonksiyonlar (Functions)</p>
+    </header>
+
+    <section>
+        <h2>1. Fonksiyon Nedir?</h2>
+        <p>Fonksiyonlar, belirli bir işi yapmak için gruplandırılmış kod bloklarıdır. Bir fonksiyonu bir kez tanımlarsınız ve ihtiyacınız olan her yerde ismini söyleyerek (çağırarak) çalıştırırsınız.</p>
+        
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Mutfak Robotu 🍹</strong><br>
+            Bir mutfak robotunu düşünün. İçine meyveleri koyarsınız, düğmesine basarsınız ve o size bir içecek hazırlar. Robotun içindeki bıçakların nasıl döndüğünü her seferinde yeniden tasarlamanıza gerek yoktur. Sadece meyveleri (girdi) verirsiniz ve sonucu (çıktı) alırsınız. JavaScript'te fonksiyonlar tam olarak budur!
+        </div>
+        
+    </section>
+
+    <section>
+        <h2>2. Fonksiyon Nasıl Yazılır? (Tanımlama)</h2>
+        <p>Bir fonksiyon oluşturmak için <code>function</code> anahtar kelimesini kullanırız, ardından fonksiyona bir isim veririz.</p>
+
+        <div class="code-block">
+<pre>
+<span class="comment">// 1. Fonksiyonu oluşturuyoruz (Tanımlama)</span>
+<span class="keyword">function</span> <span class="highlight">selamVer</span>() {
+    console.log("Merhaba arkadaşlar!");
+    console.log("Bugün JavaScript öğreniyoruz.");
+}
+
+<span class="comment">// 2. Fonksiyonu çalıştırma (Çağırma)</span>
+selamVer(); 
+selamVer(); <span class="comment">// İstediğimiz kadar çağırabiliriz!</span>
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Parametreler: Fonksiyona Bilgi Göndermek</h2>
+        <p>Bazen fonksiyonlarımızın dışarıdan bilgiye ihtiyacı olur. Örneğin "Selam ver" demek yerine "Mert'e selam ver" demek istiyorsak, fonksiyonun parantez içine bir değişken (parametre) yazarız.</p>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">function</span> <span class="highlight">kisiyeSelamVer</span>(isim) {
+    console.log("Merhaba " + isim + ", hoş geldin!");
+}
+
+<span class="comment">// Fonksiyonu çağırırken bilgiyi gönderiyoruz (Argüman)</span>
+kisiyeSelamVer("Mert"); 
+kisiyeSelamVer("Zeynep");
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Return: Sonucu Geri Almak</h2>
+        <p>Bazı fonksiyonlar sadece bir iş yapmaz, bize bir sonuç üretir. Mutfak robotunun bize meyve suyunu uzatması gibi, fonksiyon da <code>return</code> kelimesiyle bize bir değer döndürür.</p>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">function</span> <span class="highlight">toplamaYap</span>(sayi1, sayi2) {
+    <span class="keyword">let</span> sonuc = sayi1 + sayi2;
+    <span class="keyword">return</span> sonuc; <span class="comment">// Sonucu dışarıya fırlat!</span>
+}
+
+<span class="comment">// Dönen sonucu bir değişkene kaydedebiliriz</span>
+<span class="keyword">let</span> toplam = toplamaYap(10, 20);
+console.log("Sonuç: " + toplam); <span class="comment">// Çıktı: 30</span>
+</pre>
+        </div>
+
+        <div class="info-box">
+            <strong>Neden Return Kullanırız?</strong><br>
+            Eğer bir fonksiyonun ürettiği cevabı başka bir işlemde (örneğin bir indirim hesaplamasında) kullanmak istiyorsak <code>return</code> şarttır. <code>console.log</code> sadece ekrana yazar, ama <code>return</code> o veriyi elimize verir.
+        </div>
+    </section>
+
+    <section>
+        <h2>5. Neden Fonksiyon Kullanmalıyız?</h2>
+        <ul>
+            <li><strong>Tekrarı Önler:</strong> Aynı kodu defalarca yazmazsınız.</li>
+            <li><strong>Düzen Sağlar:</strong> Kodunuzu küçük, anlaşılır parçalara böler.</li>
+            <li><strong>Kolay Hata Bulma:</strong> Bir işlemde hata varsa, sadece o fonksiyonun içine bakmanız yeterlidir.</li>
+            <li><strong>Okunabilirlik:</strong> <code>kullaniciyiKaydet()</code> gibi isimler, kodun ne yaptığını şiir gibi anlatır.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Mini Uygulama: Doğum Yılı Hesaplayıcı</h2>
+        <p>Öğrendiklerimizi birleştirelim! Mevcut yıldan kullanıcının yaşını çıkarıp doğum yılını bulan bir fonksiyon yazalım:</p>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">function</span> <span class="highlight">dogumYiliHesapla</span>(isim, yas) {
+    <span class="keyword">let</span> su ankiYil = 2026;
+    <span class="keyword">let</span> dogumYili = suAnkiYil - yas;
+    <span class="keyword">return</span> isim + " isimli kişi " + dogumYili + " yılında doğmuştur.";
+}
+
+console.log(dogumYiliHesapla("Mert", 26));
+</pre>
+        </div>
+    </section>
+
+</body>
+</html>
