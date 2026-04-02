@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 7: DOM Manipülasyonu ve Etkileşim</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: #f7df1e;
+            margin: 0;
+            font-size: 2.8em;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #f7df1e;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        .analogy, .info-box, .warning-box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .analogy {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #ebf5ff;
+            border-left: 5px solid #3182ce;
+        }
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #f6e05e;
+            font-weight: bold;
+        }
+        .keyword {
+            color: #f56565;
+            font-weight: bold;
+        }
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+        ul {
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ders 7: Web Sayfasına Hükmetmek</h1>
+        <p>JavaScript ile HTML'i Canlandırmak: DOM ve Etkileşim</p>
+    </header>
+
+    <section>
+        <h2>1. DOM (Document Object Model) Nedir?</h2>
+        <p>Tarayıcınız bir HTML sayfasını yüklediğinde, arka planda bu sayfanın bir haritasını veya iskeletini çıkarır. Bu haritaya <strong>DOM (Belge Nesne Modeli)</strong> denir.</p>
+        
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Kukla ve İpleri 🎭</strong><br>
+            Web sayfanızdaki her bir HTML etiketini (başlıklar, butonlar, resimler) bir kukla gibi düşünün. DOM, bu kuklalara bağlanan iplerdir. JavaScript ise bu ipleri tutan kuklacıdır! JS kullanarak ipleri çeker, butonların rengini değiştirir veya ekrana yeni yazılar ekleriz.
+        </div>
+        
+    </section>
+
+    <section>
+        <h2>2. Kuklanın İplerini Yakalamak (Eleman Seçimi)</h2>
+        <p>JavaScript ile bir HTML elemanını değiştirmeden önce, onu "yakalamamız" (seçmemiz) gerekir. Bunun için <code>document</code> kelimesini kullanırız.</p>
+
+        <div class="code-block">
+<pre>
+<span class="comment">&lt;!-- HTML Kısmı --&gt;</span>
+&lt;h1 id="ana-baslik"&gt;Eski Başlık&lt;/h1&gt;
+&lt;button class="kirmizi-buton"&gt;Tıkla&lt;/button&gt;
+
+<span class="comment">// JavaScript Kısmı</span>
+<span class="comment">// 1. ID'sine göre yakalamak (En çok kullanılan!)</span>
+<span class="keyword">let</span> baslik = document.getElementById("ana-baslik");
+
+<span class="comment">// 2. CSS Seçicisi gibi yakalamak (Modern yöntem)</span>
+<span class="keyword">let</span> buton = document.querySelector(".kirmizi-buton");
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Sayfayı Değiştirmek (Manipülasyon)</h2>
+        <p>Elemanı yakaladıktan sonra onunla istediğimiz gibi oynayabiliriz. İçindeki yazıyı, HTML yapısını veya CSS stilini anında değiştirebiliriz.</p>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">let</span> mesajKutusu = document.getElementById("mesaj");
+
+<span class="comment">// İçindeki yazıyı değiştirmek</span>
+mesajKutusu.innerHTML = "Sisteme Başarıyla Giriş Yaptınız! ✅";
+
+<span class="comment">// CSS özelliklerini değiştirmek</span>
+mesajKutusu.style.color = "white";
+mesajKutusu.style.backgroundColor = "green";
+mesajKutusu.style.padding = "20px";
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Sihrin Başladığı Yer: Olay Dinleyicileri (Events)</h2>
+        <p>JavaScript, kullanıcıların sitede ne yaptığını sürekli izleyebilir. Bir butona tıklandığında, fare bir resmin üzerine geldiğinde veya klavyede bir tuşa basıldığında anında tepki verebiliriz. Buna <strong>Olay (Event)</strong> denir.</p>
+
+        <div class="info-box">
+            <strong>addEventListener() Nedir?</strong><br>
+            Kelime anlamı "Olay Dinleyicisi Ekle"dir. JavaScript'e "Şu elemanı dinle, eğer belirttiğim olay (örneğin tıklama) gerçekleşirse şu fonksiyonu çalıştır" demektir.
+        </div>
+
+        <h3>Örnek: Karanlık Mod Butonu Yapalım 🌙</h3>
+        
+        <div class="code-block">
+<pre>
+<span class="comment">&lt;!-- HTML Butonumuz --&gt;</span>
+&lt;button id="temaButonu"&gt;Karanlık Moda Geç&lt;/button&gt;
+
+<span class="comment">// JavaScript Kodumuz</span>
+<span class="keyword">let</span> temaBtn = document.getElementById("temaButonu");
+
+<span class="comment">// Butona tıklanma (click) olayını dinliyoruz</span>
+temaBtn.addEventListener("click", <span class="keyword">function</span>() {
+    
+    <span class="comment">// Sayfanın arka planını siyaha, yazıları beyaza çevir</span>
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "white";
+    
+    <span class="comment">// Butonun içindeki yazıyı değiştir</span>
+    temaBtn.innerHTML = "Aydınlık Moda Geç ☀️";
+    
+});
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>5. Formlardan Veri Almak (Kullanıcı Girdisi)</h2>
+        <p>Öğrencilerin en çok kullanacağı şeylerden biri, kullanıcının girdiği metinleri okumaktır. Bir <code>&lt;input&gt;</code> (girdi) kutusunun içindeki değere ulaşmak için <code>.value</code> özelliğini kullanırız.</p>
+
+        <div class="code-block">
+<pre>
+<span class="comment">&lt;!-- HTML Girdi Kutusu --&gt;</span>
+&lt;input type="text" id="kullaniciAdi" placeholder="Adınızı girin"&gt;
+
+<span class="comment">// JavaScript ile kutunun içindeki yazıyı okumak</span>
+<span class="keyword">let</span> isimKutusu = document.getElementById("kullaniciAdi");
+console.log("Hoş geldin, " + isimKutusu.value);
+</pre>
+        </div>
+    </section>
+
+</body>
+</html>
