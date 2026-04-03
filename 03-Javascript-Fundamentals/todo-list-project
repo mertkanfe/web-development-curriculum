@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 8: İlk Mini Projemiz - Yapılacaklar Listesi</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: #f7df1e;
+            margin: 0;
+            font-size: 2.8em;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #f7df1e;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        .analogy, .info-box, .warning-box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .analogy {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #ebf5ff;
+            border-left: 5px solid #3182ce;
+        }
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #f6e05e;
+            font-weight: bold;
+        }
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+        ul {
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ders 8: Kodlama Atölyesi</h1>
+        <p>Öğrendiklerimizi Birleştiriyoruz: To-Do List (Yapılacaklar Listesi) Projesi</p>
+    </header>
+
+    <section>
+        <h2>1. Projemizin Amacı Nedir?</h2>
+        <p>Bu derste, şu ana kadar öğrendiğimiz <strong>Değişkenler, Fonksiyonlar ve DOM Manipülasyonu</strong> konularını bir araya getirerek gerçek bir uygulama yapacağız. Kullanıcı bir metin kutusuna görev yazacak, "Ekle" butonuna basacak ve bu görev aşağıdaki listede belirecek!</p>
+        
+        
+
+        <div class="analogy">
+            <strong>Adım Adım Düşünelim (Algoritma Mantığı):</strong><br>
+            1. Kullanıcının yazı yazdığı kutuyu ve butonu bul.<br>
+            2. Butona tıklandığında (Event), kutunun içindeki yazıyı al.<br>
+            3. Yeni bir liste elemanı (li) oluştur ve yazıyı içine koy.<br>
+            4. Bu yeni elemanı sayfa üzerindeki mevcut listeye (ul) ekle.<br>
+            5. Kutunun içini bir sonraki görev için temizle.
+        </div>
+    </section>
+
+    <section>
+        <h2>2. Sahneyi Hazırlayalım: HTML İskeleti</h2>
+        <p>Önce kuklalarımızı (HTML etiketlerimizi) sahneye yerleştirelim ki JavaScript ile iplerini çekebilelim.</p>
+
+        <div class="code-block">
+<pre>
+<span class="comment">&lt;!-- Bu kodları kendi HTML dosyanızın body kısmına yazın --&gt;</span>
+&lt;div class="uygulama-kutusu"&gt;
+    &lt;h2&gt;Günlük Görevlerim 📝&lt;/h2&gt;
+    
+    <span class="comment">&lt;!-- Kullanıcıdan veri alacağımız input ve buton --&gt;</span>
+    &lt;input type="text" id="gorevGirdisi" placeholder="Yeni bir görev yazın..."&gt;
+    &lt;button id="ekleButonu"&gt;Listeye Ekle&lt;/button&gt;
+
+    <span class="comment">&lt;!-- Görevlerin sıralanacağı boş listemiz --&gt;</span>
+    &lt;ul id="gorevListesi"&gt;
+        <span class="comment">&lt;!-- Yeni görevler buraya gelecek --&gt;</span>
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Sihri Başlatalım: JavaScript Kodları</h2>
+        <p>Şimdi <code>app.js</code> dosyamıza geçelim ve sırasıyla algoritmamızı koda dökelim.</p>
+
+        <div class="warning-box">
+            <strong>Yeni Bir Komut Öğreniyoruz: createElement()</strong><br>
+            HTML dosyamızda olmayan yepyeni bir etiketi JavaScript ile yoktan var etmek için <code>document.createElement("etiket-adi")</code> kullanırız.
+        </div>
+
+        <div class="code-block">
+<pre>
+<span class="comment">// 1. ADIM: İhtiyacımız olan tüm HTML elemanlarını (kuklaları) yakalayalım</span>
+<span class="keyword">const</span> gorevKutusu = document.getElementById("gorevGirdisi");
+<span class="keyword">const</span> ekleBtn = document.getElementById("ekleButonu");
+<span class="keyword">const</span> liste = document.getElementById("gorevListesi");
+
+<span class="comment">// 2. ADIM: Butona tıklanma olayını (Event) dinleyelim</span>
+ekleBtn.addEventListener("click", <span class="keyword">function</span>() {
+    
+    <span class="comment">// Kutunun içindeki yazıyı alıyoruz</span>
+    <span class="keyword">let</span> yeniGorev = gorevKutusu.value;
+    
+    <span class="comment">// Eğer kutu boşsa uyarı ver ve işlemi durdur (if kontrolü!)</span>
+    <span class="keyword">if</span> (yeniGorev === "") {
+        alert("Lütfen boş bir görev eklemeyin!");
+        <span class="keyword">return</span>; <span class="comment">// Fonksiyonu burada keser, aşağıya inmez</span>
+    }
+
+    <span class="comment">// 3. ADIM: Yeni bir liste elemanı (&lt;li&gt;) oluşturalım</span>
+    <span class="keyword">let</span> yeniMadde = document.createElement("li");
+    
+    <span class="comment">// İçine kullanıcının yazdığı metni ekleyelim</span>
+    yeniMadde.innerHTML = yeniGorev;
+
+    <span class="comment">// 4. ADIM: Bu yeni maddeyi, sayfadaki listemizin (ul) içine yapıştıralım (appendChild)</span>
+    liste.appendChild(yeniMadde);
+
+    <span class="comment">// 5. ADIM: Yeni bir şey yazabilmek için kutunun içini temizleyelim</span>
+    gorevKutusu.value = "";
+    
+});
+</pre>
+        </div>
+
+        <div class="info-box">
+            <strong>appendChild() Nedir?</strong><br>
+            İngilizce "Çocuk Ekle" anlamına gelir. Bir HTML etiketinin içine (sonuna) yeni bir etiket yerleştirmek için kullanırız. Bizim örneğimizde <code>&lt;ul&gt;</code> ebeveyn, <code>&lt;li&gt;</code> ise eklenecek çocuktur!
+        </div>
+    </section>
+
+    <section>
+        <h2>Tebrikler! 🎉</h2>
+        <p>Artık çalışan, etkileşimli ve tamamen sizin yazdığınız bir JavaScript uygulamanız var! Kodlamanın en keyifli kısmı, yazdığınız mantığın ekranda can bulmasını izlemektir.</p>
+    </section>
+
+</body>
+</html>
