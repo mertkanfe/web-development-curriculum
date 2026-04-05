@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 10: Tarayıcı Hafızası (LocalStorage)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: #f7df1e;
+            margin: 0;
+            font-size: 2.8em;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #f7df1e;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        .analogy, .info-box, .warning-box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .analogy {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #ebf5ff;
+            border-left: 5px solid #3182ce;
+        }
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #f6e05e;
+            font-weight: bold;
+        }
+        .keyword {
+            color: #f56565;
+            font-weight: bold;
+        }
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+        ul {
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ders 10: Unutmayan Web Siteleri</h1>
+        <p>Verileri Tarayıcıda Kalıcı Hale Getirmek: LocalStorage</p>
+    </header>
+
+    <section>
+        <h2>1. F5 (Yenile) Kabusu Nedir?</h2>
+        <p>Önceki dersimizde harika bir To-Do List yaptık. Ancak sayfayı yenilediğinizde veya tarayıcıyı kapatıp açtığınızda tüm verilerin kaybolduğunu fark etmişsinizdir. Çünkü JavaScript değişkenleri (let, const) verileri sadece bilgisayarın geçici hafızasında (RAM) tutar.</p>
+        <p>Kalıcı bir uygulama istiyorsak, bu verileri tarayıcının "sabit diskine" kaydetmeliyiz.</p>
+    </section>
+
+    <section>
+        <h2>2. Çözüm: LocalStorage (Yerel Depolama)</h2>
+        <p>LocalStorage, internet tarayıcınızın (Chrome, Safari, Edge) her web sitesi için ayırdığı küçük bir cep defteridir. Bu deftere yazdığınız bilgiler, siz özellikle silene kadar veya tarayıcı geçmişini temizleyene kadar orada kalır.</p>
+        
+        
+
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Anahtar ve Kilit Sistemi 🔑</strong><br>
+            Deftere bir şey yazarken ona her zaman bir <strong>Anahtar (Key)</strong> ismi veririz. Örneğin anahtarımız "kullanici_adi", değerimiz (Value) ise "Ahmet" olur. Daha sonra bu veriyi okumak istediğimizde tarayıcıya "Bana 'kullanici_adi' anahtarındaki değeri getir" deriz.
+        </div>
+    </section>
+
+    <section>
+        <h2>3. LocalStorage'a Veri Kaydetmek ve Okumak</h2>
+        <p>Kullanımı son derece basittir. Deftere yazmak için <code>setItem</code>, defterden okumak için <code>getItem</code> komutlarını kullanırız.</p>
+
+        <div class="code-block">
+<pre>
+<span class="comment">// 1. Veri Kaydetmek (Deftere yazmak)</span>
+<span class="comment">// Kural: localStorage.setItem("AnahtarAdı", "Değer");</span>
+localStorage.setItem("temaRengi", "Karanlık");
+localStorage.setItem("oyunSkoru", "1500");
+
+<span class="comment">// 2. Veri Okumak (Defterden okumak)</span>
+<span class="keyword">let</span> kayitliTema = localStorage.getItem("temaRengi");
+console.log(kayitliTema); <span class="comment">// Çıktı: Karanlık</span>
+
+<span class="comment">// 3. Veri Silmek (Defterden tek bir sayfayı koparmak)</span>
+localStorage.removeItem("oyunSkoru");
+
+<span class="comment">// 4. Tüm Defteri Yakmak (Her şeyi temizlemek)</span>
+localStorage.clear();
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Büyük Tuzak: LocalStorage Sadece "Metin" Anlar!</h2>
+        <p>İşte en önemli kısım: LocalStorage'ın içine bir Dizi (Array) veya gelişmiş bir veri kaydetmeye çalışırsanız, bozulur. Sadece düz metin (String) kabul eder.</p>
+
+        <div class="warning-box">
+            <strong>Dondurucu ve Mikrodalga Mantığı (JSON Sihri) 🧊🔥</strong><br>
+            Bir yemeği uzun süre saklamak için ne yaparsınız? Onu dondurucuya atarsınız (katılaşır). Yiyeceğiniz zaman da mikrodalgada ısıtıp eski haline getirirsiniz.
+            <ul>
+                <li><strong>JSON.stringify():</strong> Dizimizi (Array) alır ve dondurarak düz bir metne çevirir. Artık LocalStorage'a kaydedebiliriz!</li>
+                <li><strong>JSON.parse():</strong> LocalStorage'dan çektiğimiz buzlu metni alır, ısıtır ve tekrar kullanılabilir bir Diziye (Array) dönüştürür.</li>
+            </ul>
+        </div>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">let</span> gorevlerDizisi = ["Ekmek Al", "Kod Yaz", "Kitap Oku"];
+
+<span class="comment">// YANLIŞ KULLANIM (Bozulur!)</span>
+<span class="comment">// localStorage.setItem("gorevlerim", gorevlerDizisi); </span>
+
+<span class="comment">// DOĞRU KULLANIM (Önce metne çevirip donduruyoruz)</span>
+<span class="keyword">let</span> dondurulmusVeri = JSON.stringify(gorevlerDizisi);
+localStorage.setItem("gorevlerim", dondurulmusVeri);
+
+<span class="comment">// VERİYİ GERİ OKUMAK (Isıtıp çözüyoruz)</span>
+<span class="keyword">let</span> gelenMetin = localStorage.getItem("gorevlerim");
+<span class="keyword">let</span> cozulmusDizi = JSON.parse(gelenMetin);
+
+console.log(cozulmusDizi[0]); <span class="comment">// Çıktı: Ekmek Al</span>
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Sıradaki Adım Ne?</h2>
+        <p>Artık elimizde kalıcı bir hafıza var! Öğrendiğiniz bu <code>JSON.stringify</code> ve <code>JSON.parse</code> mantığı ile bir önceki derste yaptığınız To-Do List projesindeki görevleri tarayıcıya kaydedecek şekilde kodlarınızı güncelleyebilirsiniz.</p>
+    </section>
+
+</body>
+</html>
