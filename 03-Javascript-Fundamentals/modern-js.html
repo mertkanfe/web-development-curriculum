@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 11: Modern JavaScript (ES6 ve Ötesi)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: #f7df1e;
+            margin: 0;
+            font-size: 2.8em;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #f7df1e;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        .analogy, .info-box, .warning-box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .analogy {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #ebf5ff;
+            border-left: 5px solid #3182ce;
+        }
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #f6e05e;
+            font-weight: bold;
+        }
+        .keyword {
+            color: #f56565;
+            font-weight: bold;
+        }
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+        ul {
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ders 11: JavaScript'in Modern Yüzü</h1>
+        <p>Daha Kısa, Daha Şık Kodlar: ES6 Standartları</p>
+    </header>
+
+    <section>
+        <h2>1. ES6 Nedir? (Yazılımın Evrimi)</h2>
+        <p>Diller zamanla değişir. Nasıl ki günlük hayatta eskisi gibi divan edebiyatı kelimeleriyle konuşmuyorsak, JavaScript de zamanla modernleşmiştir. 2015 yılında çıkan <strong>ES6 (ECMAScript 6)</strong> güncellemesi, dilin yapısını tamamen değiştirerek kod yazmayı çok daha pratik hale getirdi.</p>
+        <p>Bugün React, Vue veya Node.js gibi teknolojileri öğrenmek istiyorsanız, bu modern yazım tarzını bilmek zorundasınız.</p>
+    </section>
+
+    <section>
+        <h2>2. Artı (+) Çilesine Son: Template Literals</h2>
+        <p>Eskiden değişkenleri ve metinleri birleştirirken sürekli artı (<code>+</code>) işareti kullanmak ve boşlukları ayarlamak bir kabustu.</p>
+
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Boşluk Doldurmaca 📝</strong><br>
+            Cümleleri bantla (artı işaretiyle) birbirine yapıştırmak yerine, yeni sistemde sadece bir cümle kalıbı yazarız ve değişkenlerin geleceği yerlere <code>${ }</code> ile boşluklar açarız.
+        </div>
+
+        <div class="warning-box">
+            <strong>Önemli Kısayol: Backtick ( ` ) İşareti</strong><br>
+            Bu sihirli özelliği kullanmak için normal tırnak yerine "Backtick" (Ters Tırnak) kullanmalıyız. Türkçe Windows klavyelerde <strong>AltGr + Noktalı Virgül (;)</strong> tuşlarına aynı anda basarak yapabilirsiniz.
+        </div>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">let</span> ad = "Mert";
+<span class="keyword">let</span> yas = 26;
+
+<span class="comment">// ❌ ESKİ YÖNTEM (Hata yapması çok kolay)</span>
+<span class="keyword">let</span> eskiMesaj = "Merhaba benim adım " + ad + " ve ben " + yas + " yaşındayım.";
+
+<span class="comment">// ✅ YENİ YÖNTEM (Template Literals - Temiz ve okunaklı)</span>
+<span class="keyword">let</span> yeniMesaj = <span class="highlight">`Merhaba benim adım ${ad} ve ben ${yas} yaşındayım.`</span>;
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Tek Satırda Mantık: Ternary Operator</h2>
+        <p>Bazen 5 satırlık bir `if-else` bloğu yazmak yerine, bu işlemi tek satırda çözmek isteriz. Buna <strong>Ternary (Üçlü) Operatör</strong> denir. Formülü basittir: <code>Koşul ? Doğruysa : Yanlışsa</code></p>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">let</span> puan = 85;
+
+<span class="comment">// ❌ ESKİ YÖNTEM (Çok fazla satır)</span>
+<span class="keyword">let</span> sonuc;
+<span class="keyword">if</span> (puan >= 50) {
+    sonuc = "Geçtin";
+} <span class="keyword">else</span> {
+    sonuc = "Kaldın";
+}
+
+<span class="comment">// ✅ YENİ YÖNTEM (Sadece tek satır!)</span>
+<span class="keyword">let</span> yeniSonuc = puan >= 50 <span class="highlight">?</span> "Geçtin" <span class="highlight">:</span> "Kaldın";
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Fonksiyonların Yeni Evrimi: Arrow Functions (Ok Fonksiyonları)</h2>
+        <p>JavaScript'te <code>function</code> kelimesini yazmaktan sıkılmadınız mı? Arrow Functions sayesinde daha kısa ve modern fonksiyonlar yazabiliyoruz.</p>
+        
+        
+
+        <div class="code-block">
+<pre>
+<span class="comment">// ❌ ESKİ YÖNTEM</span>
+<span class="keyword">function</span> topla(a, b) {
+    <span class="keyword">return</span> a + b;
+}
+
+<span class="comment">// ✅ YENİ YÖNTEM (Arrow Function)</span>
+<span class="keyword">const</span> topla = (a, b) <span class="highlight">=&gt;</span> {
+    <span class="keyword">return</span> a + b;
+}
+
+<span class="comment">// 🚀 DAHA DA KISASI! (Eğer fonksiyon tek satırsa return'e ve süslü paranteze gerek yoktur)</span>
+<span class="keyword">const</span> kisaTopla = (a, b) <span class="highlight">=&gt;</span> a + b;
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>5. Kutuları Kolayca Açmak: Destructuring</h2>
+        <p>Dizilerin içindeki verilere tek tek indeks numarasıyla (<code>dizi[0]</code>, <code>dizi[1]</code>) erişmek yerine, onlara doğrudan isim vererek kutudan çıkarabiliriz.</p>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">let</span> renkler = ["Kırmızı", "Mavi", "Yeşil"];
+
+<span class="comment">// Eski yöntem</span>
+<span class="keyword">let</span> ilkRenk = renkler[0];
+<span class="keyword">let</span> ikinciRenk = renkler[1];
+
+<span class="comment">// ✅ YENİ YÖNTEM (Destructuring)</span>
+<span class="comment">// Dizideki 1. elemanı 'renk1'e, 2. elemanı 'renk2'ye ata.</span>
+<span class="keyword">const</span> [renk1, renk2] = renkler;
+
+console.log(renk1); <span class="comment">// Çıktı: Kırmızı</span>
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Modern Geliştiriciler Kulübüne Hoş Geldiniz! 🎯</h2>
+        <p>Gördüğünüz gibi modern JavaScript, daha az kod yazarak daha çok iş yapmamızı sağlıyor. Bundan sonraki projelerimizde `function` kelimesi yerine okları (=&gt;), `+` işaretleri yerine ise backtick (`) işaretlerini kullanmaya alışacağız.</p>
+    </section>
+
+</body>
+</html>
