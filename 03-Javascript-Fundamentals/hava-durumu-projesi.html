@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 13: Kodlama Atölyesi - Hava Durumu Uygulaması</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: #f7df1e;
+            margin: 0;
+            font-size: 2.8em;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #f7df1e;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        .analogy, .info-box, .warning-box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .analogy {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #ebf5ff;
+            border-left: 5px solid #3182ce;
+        }
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #f6e05e;
+            font-weight: bold;
+        }
+        .keyword {
+            color: #f56565;
+            font-weight: bold;
+        }
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+        ul {
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ders 13: Kodlama Atölyesi 2</h1>
+        <p>Gerçek Verilerle Çalışmak: Hava Durumu Uygulaması 🌤️</p>
+    </header>
+
+    <section>
+        <h2>1. Projemizin Amacı Nedir?</h2>
+        <p>Bu atölyede, kullanıcıdan bir şehir ismi alacağız, bu şehir ismini hava durumu sağlayan bir sunucuya (API) göndereceğiz ve gelen gerçek sıcaklık verisini ekrana yazdıracağız. Bu projede ES6 özelliklerini (Arrow Functions, Template Literals) aktif olarak kullanacağız.</p>
+        
+        
+
+        <div class="analogy">
+            <strong>Yeni Bir Kavram: API Key (Kimlik Kartı) 💳</strong><br>
+            Hava durumu sunucuları (örneğin OpenWeatherMap), kapılarını herkese sonuna kadar açmaz. Çok fazla istek gelip sunucunun çökmesini engellemek için, kayıt olan herkese özel bir şifre (API Key) verir. Biz de siparişimizi verirken garsona "Al bu da benim kimliğim" diyerek bu şifreyi göstereceğiz.
+        </div>
+    </section>
+
+    <section>
+        <h2>2. Sahneyi Hazırlayalım: HTML İskeleti</h2>
+        <p>Kullanıcının şehir ismini girebileceği bir kutu ve sonuçları göstereceğimiz bir alan oluşturuyoruz.</p>
+
+        <div class="code-block">
+<pre>
+<span class="comment">&lt;!-- Uygulama Kutusu --&gt;</span>
+&lt;div class="hava-durumu-kutusu"&gt;
+    &lt;h2&gt;Anlık Hava Durumu&lt;/h2&gt;
+    
+    &lt;input type="text" id="sehirGirdisi" placeholder="Örn: Istanbul"&gt;
+    &lt;button id="sorgulaButonu"&gt;Hava Durumunu Getir&lt;/button&gt;
+
+    <span class="comment">&lt;!-- Veriler Geldiğinde Burası Dolacak --&gt;</span>
+    &lt;div id="sonucAlani" style="margin-top: 20px;"&gt;
+        <span class="comment">&lt;!-- &lt;h3&gt;Istanbul&lt;/h3&gt; --&gt;</span>
+        <span class="comment">&lt;!-- &lt;p&gt;Sıcaklık: 24°C&lt;/p&gt; --&gt;</span>
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. JavaScript Kodlarımız (Sihrin Gerçekleştiği Yer)</h2>
+        <p>Aşağıdaki kodda <code>fetch</code> ile asenkron (beklemeli) bir işlem yapacağız. Kodların ES6 standartlarıyla (const, let, =>, `${}`) yazıldığına dikkat edin!</p>
+
+        <div class="warning-box">
+            <strong>Not:</strong> Gerçek bir projede OpenWeatherMap sitesinden kendi API Key'inizi almanız gerekir. Biz bu derste eğitim amaçlı örnek bir API linki kullanacağız.
+        </div>
+
+        <div class="code-block">
+<pre>
+<span class="comment">// 1. HTML Elemanlarını Yakalayalım</span>
+<span class="keyword">const</span> sehirGirdisi = document.getElementById("sehirGirdisi");
+<span class="keyword">const</span> sorgulaBtn = document.getElementById("sorgulaButonu");
+<span class="keyword">const</span> sonucAlani = document.getElementById("sonucAlani");
+
+<span class="comment">// (Temsili API Anahtarımız)</span>
+<span class="keyword">const</span> API_KEY = "sizin_gizli_anahtariniz"; 
+
+<span class="comment">// 2. Butona Tıklanma Olayı (Arrow Function ve Async kullanıyoruz)</span>
+sorgulaBtn.addEventListener("click", <span class="keyword">async</span> () <span class="highlight">=&gt;</span> {
+    
+    <span class="keyword">const</span> sehir = sehirGirdisi.value;
+
+    <span class="comment">// Boş gönderimi engelle</span>
+    <span class="keyword">if</span> (sehir === "") {
+        alert("Lütfen bir şehir adı girin!");
+        <span class="keyword">return</span>;
+    }
+
+    <span class="comment">// 3. Yükleniyor mesajı gösterelim</span>
+    sonucAlani.innerHTML = "&lt;p&gt;Hava durumu sorgulanıyor... ⏳&lt;/p&gt;";
+
+    <span class="keyword">try</span> {
+        <span class="comment">// 4. API'den Veriyi Çekelim (Template Literals ile linki birleştiriyoruz)</span>
+        <span class="comment">// Not: Bu link örnektir. Gerçek hayatta linkin sonuna &appid=${API_KEY} eklenir.</span>
+        <span class="keyword">const</span> cevap = <span class="keyword">await</span> fetch(<span class="highlight">`https://api.openweathermap.org/data/2.5/weather?q=${sehir}&units=metric&appid=${API_KEY}`</span>);
+        
+        <span class="comment">// Gelen cevabı JSON formatına çevir (Bekle)</span>
+        <span class="keyword">const</span> veri = <span class="keyword">await</span> cevap.json();
+
+        <span class="comment">// Eğer şehir bulunamazsa (Örn: 404 hatası)</span>
+        <span class="keyword">if</span> (veri.cod === "404") {
+            sonucAlani.innerHTML = "&lt;p style='color:red;'&gt;Şehir bulunamadı! Harf hatası yapmış olabilirsiniz.&lt;/p&gt;";
+            <span class="keyword">return</span>;
+        }
+
+        <span class="comment">// 5. Gelen Veriyi Ekrana Yazdıralım</span>
+        <span class="comment">// Gelen JSON dosyasının içindeki name (şehir adı) ve main.temp (sıcaklık) verilerini alıyoruz</span>
+        sonucAlani.innerHTML = <span class="highlight">`
+            &lt;h3&gt;📍 ${veri.name}, ${veri.sys.country}&lt;/h3&gt;
+            &lt;h1 style="color: #ed8936;"&gt;${veri.main.temp} °C&lt;/h1&gt;
+            &lt;p&gt;Durum: ${veri.weather[0].description}&lt;/p&gt;
+        `</span>;
+
+    } <span class="keyword">catch</span> (hata) {
+        <span class="comment">// İnternet kopması gibi beklenmeyen hataları yakalarız</span>
+        sonucAlani.innerHTML = "&lt;p&gt;Bağlantı hatası oluştu.&lt;/p&gt;";
+        console.log("Hata detayı: ", hata);
+    }
+    
+});
+</pre>
+        </div>
+
+        <div class="info-box">
+            <strong>Try / Catch Bloğu Nedir?</strong><br>
+            Asenkron işlemlerde sunucu çökebilir veya kullanıcının interneti kesilebilir. <code>try</code> (dene) kısmına kodlarımızı yazarız. Eğer bir çökme olursa program hata verip durmak yerine, kontrolü gizlice <code>catch</code> (yakala) kısmına geçirir ve kullanıcıya kibar bir hata mesajı gösteririz.
+        </div>
+    </section>
+
+    <section>
+        <h2>Tebrikler! Dış Dünyaya Bağlandınız 🌍</h2>
+        <p>Bu projeyle birlikte temel bir web uygulamasının tüm adımlarını (Kullanıcı Arayüzü -> Etkileşim -> Veri Çekme -> Ekranda Gösterme) tamamlamış oldunuz. Frontend geliştirme dünyasındaki en büyük adımlardan birini başarıyla attınız!</p>
+    </section>
+
+</body>
+</html>
