@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 15: Sahne Arkasına Geçiyoruz (OOP ve Algoritmalar)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: #f7df1e;
+            margin: 0;
+            font-size: 2.8em;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #f7df1e;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        .analogy, .info-box, .warning-box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .analogy {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #ebf5ff;
+            border-left: 5px solid #3182ce;
+        }
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #f6e05e;
+            font-weight: bold;
+        }
+        .keyword {
+            color: #f56565;
+            font-weight: bold;
+        }
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+        ul {
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ders 15: Sahne Arkasına Geçiş</h1>
+        <p>Programlamanın Temeli: Algoritmalar ve OOP (Nesne Yönelimli Programlama) ⚙️</p>
+    </header>
+
+    <section>
+        <h2>1. Frontend Bitti, Şimdi Ne Olacak?</h2>
+        <p>Şu ana kadar yaptığımız her şey kullanıcıların gördüğü, tıkladığı ve etkileşime girdiği <strong>Frontend (Ön Yüz)</strong> kısmıydı. Ancak büyük projelerde (örneğin bir e-ticaret sitesinde) verilerin güvenle saklanması, ödemelerin onaylanması ve karmaşık hesaplamaların yapılması gerekir. İşte bu görünmeyen güçlü motor odasına <strong>Backend (Arka Yüz)</strong> diyoruz.</p>
+        <p>Bu dünyaya adım atarken Java gibi köklü ve güçlü dillerle karşılaşacağız. Ama koda dalmadan önce iki temel kavramı anlamalıyız: Algoritmalar ve Nesneler.</p>
+    </section>
+
+    <section>
+        <h2>2. Algoritma Nedir? (Nasıl Düşünmeliyiz?)</h2>
+        <p>Algoritma, bir problemi çözmek için izlenen <strong>adım adım</strong> yoldur. Bilgisayarlar aslında çok aptaldır; onlara her detayı sırasıyla söylemeniz gerekir.</p>
+
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Çay Demleme Algoritması ☕</strong><br>
+            1. Çaydanlığa su koy.<br>
+            2. Ocağı yak.<br>
+            3. Su kaynadı mı? (Evet/Hayır Kontrolü)<br>
+            4. <strong>Eğer (If)</strong> kaynamadıysa, beklemeye devam et.<br>
+            5. <strong>Eğer (If)</strong> kaynadıysa, üst demliğe çay ekle ve suyu dök.<br>
+            6. 15 dakika bekle ve servis yap.
+        </div>
+        
+        <p>Programlama tamamen bu adımları doğru sıraya koyma sanatıdır. Mantığı kurduğunuzda, bunu hangi dille (Java, JavaScript, Python) yazdığınızın pek bir önemi kalmaz!</p>
+    </section>
+
+    <section>
+        <h2>3. Paradigma Değişimi: OOP (Nesne Yönelimli Programlama)</h2>
+        <p>Gerçek hayattaki sorunları kodlara dökmek için kullandığımız en popüler ve güçlü yöntem <strong>OOP (Object-Oriented Programming)</strong> yani Nesne Yönelimli Programlama'dır. Java, bu mantık üzerine inşa edilmiş bir dildir.</p>
+        <p>OOP'nin temel amacı; kodlarımızı tıpkı gerçek dünyadaki fiziksel nesneler gibi modellemektir. Böylece binlerce satırlık kodlar karmaşaya dönüşmez, düzenli kalır.</p>
+    </section>
+
+    <section>
+        <h2>4. OOP'nin Kalbi: Sınıf (Class) ve Nesne (Object)</h2>
+        <p>Bu iki kavramı anlamak, backend dünyasının kapılarını ardına kadar açacaktır.</p>
+
+        <div class="warning-box">
+            <strong>Kurabiye Kalıbı ve Kurabiyeler 🍪</strong><br>
+            <ul>
+                <li><strong>Class (Sınıf):</strong> Bir şeyin fabrikadaki üretim planı, taslağı veya kalıbıdır. Kurabiye kalıbının kendisi yenmez, o sadece kurabiyeye şekil verir.</li>
+                <li><strong>Object (Nesne):</strong> O kalıptan üretilmiş, fiziksel, somut gerçeklerdir. Fırından çıkan çikolatalı veya vanilyalı kurabiyelerdir!</li>
+            </ul>
+        </div>
+
+        <div class="code-block">
+<pre>
+<span class="comment">// Sınıfımız (Kalıbımız) - Java'ya benzer bir yapıda yazalım</span>
+<span class="keyword">class</span> Araba {
+    
+    <span class="comment">// Özellikler (Attributes) - Arabanın neyi var?</span>
+    <span class="keyword">String</span> marka;
+    <span class="keyword">String</span> renk;
+    <span class="keyword">int</span> hiz;
+
+    <span class="comment">// Davranışlar (Methods) - Araba ne yapabilir?</span>
+    <span class="keyword">void</span> gazaBas() {
+        hiz = hiz + 10;
+        console.log("Araba hızlanıyor! Yeni hız: " + hiz);
+    }
+}
+
+<span class="comment">// Nesnelerimiz (Kalıptan üretilen gerçek ürünler)</span>
+Araba benimArabam = <span class="keyword">new</span> Araba();
+benimArabam.marka = "Toyota";
+benimArabam.renk = "Kırmızı";
+
+Araba seninAraban = <span class="keyword">new</span> Araba();
+seninAraban.marka = "Honda";
+seninAraban.renk = "Mavi";
+</pre>
+        </div>
+
+        <div class="info-box">
+            <strong>Ne Kazandık?</strong><br>
+            Ekibe yeni bir araba eklememiz gerektiğinde kodları baştan yazmak zorunda kalmıyoruz. Sadece <code>new Araba()</code> diyerek fabrikadan (Class) yeni bir ürün (Object) çıkartıyor ve özelliklerini belirliyoruz. Kodlarımız çok daha düzenli ve yeniden kullanılabilir (reusable) hale geldi!
+        </div>
+    </section>
+
+    <section>
+        <h2>Hoş Geldiniz! 🎯</h2>
+        <p>Bu dersle birlikte sadece kod yazmayı değil, <strong>bir yazılımcı gibi düşünmeyi</strong> öğrenmeye başladınız. Sınıflar, nesneler ve algoritmalar tüm kariyeriniz boyunca en büyük yardımcılarınız olacak.</p>
+    </section>
+
+</body>
+</html>
