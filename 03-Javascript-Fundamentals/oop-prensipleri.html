@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 16: Nesnelerin Sırları (Kapsülleme ve Kalıtım)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: #f7df1e;
+            margin: 0;
+            font-size: 2.8em;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #f7df1e;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        .analogy, .info-box, .warning-box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .analogy {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #ebf5ff;
+            border-left: 5px solid #3182ce;
+        }
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #f6e05e;
+            font-weight: bold;
+        }
+        .keyword {
+            color: #f56565;
+            font-weight: bold;
+        }
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+        ul {
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ders 16: Nesnelerin Sırları</h1>
+        <p>OOP'nin Süper Güçleri: Kapsülleme (Encapsulation) ve Kalıtım (Inheritance) 🛡️</p>
+    </header>
+
+    <section>
+        <h2>1. Kapsülleme (Encapsulation) Nedir?</h2>
+        <p>Bir önceki derste sınıflar (Class) oluşturup içlerine özellikler (örneğin hız, marka) eklemiştik. Ancak yazılım dünyasında verilerimizi ortalıkta bırakamayız. Onları koruma altına almamız gerekir. İşte verileri dışarıdan gelen tehlikelere karşı gizleme işlemine <strong>Kapsülleme</strong> diyoruz.</p>
+        
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Televizyon ve Kumanda 📺</strong><br>
+            Televizyonun içindeki karmaşık kablolara, devrelere veya çiplere dokunamazsınız (onlar plastik bir <em>kapsülün</em> içindedir). Televizyonu kontrol etmek için size sadece izin verilen düğmeleri (Kumanda) kullanırsınız. Yazılımda da değişkenleri gizleriz (kablolar), onlara sadece özel fonksiyonlar (kumanda düğmeleri) aracılığıyla erişilmesine izin veririz.
+        </div>
+    </section>
+
+    <section>
+        <h2>2. Getter ve Setter Mantığı (Kumanda Düğmeleri)</h2>
+        <p>Değişkenlerin başına <code>private</code> (özel) kelimesini koyduğumuzda, o değişkene dışarıdan kimse dokunamaz. Okumak için <strong>Get</strong> (Getir), değiştirmek için <strong>Set</strong> (Ayarla) metodlarını kullanırız.</p>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">class</span> BankaHesabi {
+    
+    <span class="comment">// private: Sadece bu sınıfın içinden erişilebilir (Gizli)</span>
+    <span class="keyword">private int</span> bakiye = 1000;
+
+    <span class="comment">// GETTER: Bakiyeyi sadece okumaya izin veren fonksiyon</span>
+    <span class="keyword">public int</span> getBakiye() {
+        <span class="keyword">return</span> bakiye;
+    }
+
+    <span class="comment">// SETTER: Bakiyeye para eklerken kural koyduğumuz fonksiyon</span>
+    <span class="keyword">public void</span> setBakiye(<span class="keyword">int</span> miktar) {
+        <span class="keyword">if</span> (miktar &gt; 0) {
+            bakiye = bakiye + miktar;
+            console.log("Para yatırıldı!");
+        } <span class="keyword">else</span> {
+            console.log("Hata: Eksi değerde para yatıramazsınız!");
+        }
+    }
+}
+</pre>
+        </div>
+
+        <div class="warning-box">
+            <strong>Neden Direk Değiştirmiyoruz?</strong><br>
+            Eğer bakiye gizli (private) olmasaydı, kötü niyetli biri dışarıdan gelip <code>hesap.bakiye = -5000;</code> yazarak sistemi çökertebilirdi. Kapsülleme sayesinde <strong>kuralları biz koyarız</strong>!
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Kalıtım (Inheritance) Nedir?</h2>
+        <p>Yazılımdaki en büyük kurallardan biri <strong>"Kendini Tekrar Etme" (DRY - Don't Repeat Yourself)</strong> kuralıdır. Eğer iki farklı sınıfın ortak özellikleri varsa, bunları tekrar tekrar yazmak yerine bir "Ata (Parent)" sınıf oluşturup özelliklerini "Çocuk (Child)" sınıflara miras bırakırız.</p>
+
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Hayvanlar Alemi 🦁</strong><br>
+            Kedi, Köpek ve Kuş farklı hayvanlardır ama hepsinin ortak özellikleri vardır (yemek yerler, uyurlar, yaşları vardır). Hepsine ayrı ayrı "yemekYe()" kodu yazmak yerine, bir <strong>Hayvan</strong> sınıfı oluştururuz. Kedi ve Köpek sınıfları, Hayvan sınıfından "Miras" alır.
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Miras Alma İşlemi (Extends kelimesi)</h2>
+        <p>Bir sınıfın başka bir sınıftan miras almasını istiyorsak, <code>extends</code> (genişletir) anahtar kelimesini kullanırız.</p>
+
+        <div class="code-block">
+<pre>
+<span class="comment">// 1. ATA SINIF (Miras Bırakan)</span>
+<span class="keyword">class</span> Hayvan {
+    <span class="keyword">String</span> isim;
+    
+    <span class="keyword">void</span> yemekYe() {
+        console.log(isim + " şu an yemek yiyor.");
+    }
+}
+
+<span class="comment">// 2. ÇOCUK SINIF (Miras Alan)</span>
+<span class="comment">// "Kedi sınıfı, Hayvan sınıfının tüm özelliklerini içine aldı!"</span>
+<span class="keyword">class</span> Kedi <span class="keyword">extends</span> Hayvan {
+    
+    <span class="keyword">void</span> miyavla() {
+        console.log("Miyav!");
+    }
+}
+
+<span class="comment">// KULLANIMI:</span>
+Kedi tekir = <span class="keyword">new</span> Kedi();
+tekir.isim = "Garfield";
+tekir.miyavla(); <span class="comment">// Kendi özelliği</span>
+tekir.yemekYe(); <span class="comment">// Ata sınıftan gelen özellik!</span>
+</pre>
+        </div>
+
+        <div class="info-box">
+            <strong>Ne Kazandık?</strong><br>
+            Eğer oyuna bir "Köpek" eklemek istersek, yemek yeme veya uyuma kodlarını sıfırdan yazmayacağız. Sadece <code>class Kopek extends Hayvan</code> diyeceğiz ve saniyeler içinde tüm temel özelliklere sahip yepyeni bir canlı yaratmış olacağız!
+        </div>
+    </section>
+
+    <section>
+        <h2>OOP'nin Ustası Oluyorsunuz! 🎓</h2>
+        <p>Kapsülleme ile verilerinizi güvence altına almayı (Güvenlik), Kalıtım ile de yazdığınız kodları tekrar tekrar kullanmayı (Verimlilik) öğrendiniz. Artık arka planda çalışan devasa sistemlerin nasıl bu kadar düzenli kalabildiğini biliyorsunuz!</p>
+    </section>
+
+</body>
+</html>
