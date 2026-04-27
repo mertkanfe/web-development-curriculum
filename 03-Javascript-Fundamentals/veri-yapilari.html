@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 18: Verileri Organize Etmek (Veri Yapıları)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: #f7df1e;
+            margin: 0;
+            font-size: 2.8em;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #f7df1e;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        .analogy, .info-box, .warning-box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .analogy {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #ebf5ff;
+            border-left: 5px solid #3182ce;
+        }
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #f6e05e;
+            font-weight: bold;
+        }
+        .keyword {
+            color: #f56565;
+            font-weight: bold;
+        }
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+        ul {
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ders 18: Verileri Organize Etmek</h1>
+        <p>Bilgi Yığınlarını Yönetmek: Veri Yapılarına Giriş (Diziler ve Listeler) 🗂️</p>
+    </header>
+
+    <section>
+        <h2>1. Neden Veri Yapılarına İhtiyacımız Var?</h2>
+        <p>Bir önceki derslerimizde sınıflardan nesneler (örneğin "benimArabam", "seninAraban") üretmiştik. Peki ya bir otoparktaki 500 arabayı kodlamamız gerekirse? 500 tane farklı değişken mi oluşturacağız? Tabii ki hayır! İşte birden fazla veriyi tek bir çatı altında düzenli bir şekilde tutmamızı sağlayan sistemlere <strong>Veri Yapıları</strong> diyoruz.</p>
+    </section>
+
+    <section>
+        <h2>2. En Temel Yapı: Dizi (Array)</h2>
+        <p>Diziler, aynı türdeki verileri (sadece sayılar, sadece metinler veya sadece Araba nesneleri) yan yana kutucuklar halinde tutan yapılardır.</p>
+        
+        
+
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Yumurta Kolisi 🥚</strong><br>
+            Klasik bir dizi (Array) tıpkı 10'lu bir yumurta kolisi gibidir. Başlangıçta koli boyutunu (10) belirlersiniz. İçine en fazla 10 yumurta koyabilirsiniz. Eğer 11. yumurtayı koymak isterseniz, o koliye sığmaz; gidip yeni ve daha büyük bir koli almanız gerekir. Boyutları <strong>sabittir</strong>.
+        </div>
+
+        <div class="warning-box">
+            <strong>Sıfırdan Başlamak (Index Mantığı)</strong><br>
+            Programlama dünyasında sayma işlemi 1'den değil, <strong>0'dan</strong> başlar. Bir dizinin ilk elemanı 0. sıradadır (0. index).
+        </div>
+
+        <div class="code-block">
+<pre>
+<span class="comment">// 5 elemanlı sabit boyutlu bir sayı dizisi (Yumurta kolisi)</span>
+<span class="keyword">int</span>[] ogrenciNotlari = <span class="keyword">new int</span>[5];
+
+<span class="comment">// Dizinin odalarına (indexlerine) veri yerleştiriyoruz</span>
+ogrenciNotlari[0] = 85;  <span class="comment">// 1. Öğrenci (0. index)</span>
+ogrenciNotlari[1] = 92;  <span class="comment">// 2. Öğrenci (1. index)</span>
+ogrenciNotlari[2] = 78;
+ogrenciNotlari[3] = 100;
+ogrenciNotlari[4] = 65;  <span class="comment">// 5. Öğrenci (4. index)</span>
+
+<span class="comment">// ogrenciNotlari[5] = 90; // HATA VERİR! Koli doldu!</span>
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Esnek ve Modern Yapı: Dinamik Listeler (ArrayList)</h2>
+        <p>Sabit boyutlu diziler bazen çok kısıtlayıcı olabilir. "Ben içine veri ekledikçe kendi kendine büyüyen bir yapı istiyorum" derseniz, imdadınıza dinamik listeler (Java'daki adıyla <em>ArrayList</em>) yetişir.</p>
+
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Alışveriş Sepeti 🛒</strong><br>
+            Market arabasına ürün attıkça araba sanki sihirli bir şekilde genişliyor gibidir (yazılımda böyledir). Önceden "sadece 5 ürün alacağım" demek zorunda değilsinizdir. İstediğiniz kadar eklersiniz, isterseniz içinden bir ürünü çıkartırsınız ve sepet kendini yeniden düzenler.
+        </div>
+
+        <div class="code-block">
+<pre>
+<span class="comment">// Esnek bir alışveriş listesi oluşturuyoruz</span>
+ArrayList&lt;String&gt; marketListesi = <span class="keyword">new</span> ArrayList&lt;String&gt;();
+
+<span class="comment">// Eleman eklemek çok kolay (Sınır yok!)</span>
+marketListesi.add("Süt");
+marketListesi.add("Ekmek");
+marketListesi.add("Yumurta");
+
+<span class="comment">// Araya kaynak yapmak (1. index'e Çikolata ekle)</span>
+marketListesi.add(1, "Çikolata"); 
+
+<span class="comment">// Eleman silmek (Süt'ü listeden çıkar)</span>
+marketListesi.remove("Süt");
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Yığınlardaki Verileri Okumak (Döngüler / Loops)</h2>
+        <p>1000 kişilik bir öğrenci listemiz var ve notları ekrana yazdırmak istiyoruz. 1000 satır kod mu yazacağız? Hayır. Algoritmaların en büyük gücü olan <strong>Döngüleri (For Loop)</strong> kullanarak bilgisayara "Listeyi baştan sona gez ve işlemi tekrarla" emri vereceğiz.</p>
+
+        <div class="code-block">
+<pre>
+<span class="comment">// "i" sayacı 0'dan başlasın, listenin sonuna kadar 1'er 1'er artsın</span>
+<span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; marketListesi.size(); i++) {
+    
+    <span class="comment">// Sıradaki elemanı al ve ekrana yazdır</span>
+    <span class="keyword">String</span> siradakiUrun = marketListesi.get(i);
+    console.log(i + ". sıradaki ürün: " + siradakiUrun);
+    
+}
+</pre>
+        </div>
+
+        <div class="info-box">
+            <strong>Algoritmik Düşüncenin Temeli</strong><br>
+            Diziler ve Döngüler, yazılımdaki hemen hemen her algoritmanın yapıtaşıdır. Örneğin "Listedeki en yüksek notu bulma" (Arama Algoritması) işlemi, bir dizinin içinde döngü ile gezinerek yapılır!
+        </div>
+    </section>
+
+    <section>
+        <h2>Büyük Veriler Artık Emrinizde! 📊</h2>
+        <p>Bu dersle birlikte tekil değişkenlerden kurtulup, binlerce veriyi aynı anda depolayıp yönetebilecek güce ulaştınız. Artık gerçek dünyadaki kompleks sistemleri (kullanıcı listeleri, ürün katalogları) nasıl hafızada tuttuğumuzu biliyorsunuz.</p>
+    </section>
+
+</body>
+</html>
