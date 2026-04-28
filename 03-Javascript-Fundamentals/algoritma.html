@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 19: Algoritma Atölyesi (Arama ve Bulma)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: #f7df1e;
+            margin: 0;
+            font-size: 2.8em;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #f7df1e;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        .analogy, .info-box, .warning-box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .analogy {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #ebf5ff;
+            border-left: 5px solid #3182ce;
+        }
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #f6e05e;
+            font-weight: bold;
+        }
+        .keyword {
+            color: #f56565;
+            font-weight: bold;
+        }
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+        ul {
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ders 19: Algoritma Atölyesi 🧠</h1>
+        <p>Kodları Savaştırıyoruz: Dizilerde Arama ve En Büyüğü Bulma</p>
+    </header>
+
+    <section>
+        <h2>1. Atölyemizin Amacı</h2>
+        <p>Geçen derslerimizde yüzlerce veriyi "Diziler (Arrays)" içine saklamayı ve "Döngüler (Loops)" ile bu verilerin üzerinde tek tek gezinmeyi öğrendik. Peki ya bu yüzlerce verinin içinden <strong>en yüksek sınav notunu</strong> veya <strong>aranan belirli bir kişiyi</strong> nasıl bulacağız? İşte şimdi mantığımızı (algoritmamızı) konuşturma vakti!</p>
+    </section>
+
+    <section>
+        <h2>2. Senaryo 1: En Büyük Sayıyı Bulmak (Kralı Seçmek)</h2>
+        <p>Elimizde bir sınıfın sınav notları var. Amacımız sınıftaki en yüksek notu bulan bir program yazmak.</p>
+
+        
+
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Sınıfın En Uzun Boylu Öğrencisi 📏</strong><br>
+            Sınıftaki en uzun kişiyi nasıl bulursunuz? Gözünüze ilk çarpan kişiyi "Şimdilik En Uzun" olarak seçersiniz. Sonra onu sınıftaki diğer herkesle tek tek yan yana getirirsiniz. Eğer karşısına ondan daha uzun biri çıkarsa, artık yeni "En Uzun" o kişi olur. Liste bitene kadar bu düelloyu yaparsınız. Ayakta kalan son kişi sınıfın en uzunudur!
+        </div>
+
+        <div class="code-block">
+<pre>
+<span class="comment">// 1. Notlarımızı bir diziye koyalım</span>
+<span class="keyword">int</span>[] notlar = {45, 82, 67, 95, 33, 78};
+
+<span class="comment">// 2. İlk sıradaki notu geçici olarak "Kral" (En Büyük) ilan edelim</span>
+<span class="keyword">int</span> enBuyukNot = notlar[0]; 
+
+<span class="comment">// 3. Döngü ile diğer tüm notlara sırayla bakalım (1. indexten başlıyoruz çünkü 0'ı zaten kral seçtik)</span>
+<span class="keyword">for</span> (<span class="keyword">int</span> i = 1; i &lt; notlar.length; i++) {
+    
+    <span class="comment">// Eğer sıradaki not, bizim şu anki kralımızdan büyükse...</span>
+    <span class="keyword">if</span> (notlar[i] &gt; enBuyukNot) {
+        
+        <span class="comment">// Tahtı devret! Artık yeni kral o.</span>
+        enBuyukNot = notlar[i];
+    }
+}
+
+<span class="comment">// Döngü bittiğinde enBuyukNot değişkeninin içinde gerçekten en büyük sayı kalmış olacak</span>
+System.out.println("Sınıfın en yüksek notu: " + enBuyukNot);
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Senaryo 2: Doğrusal Arama (Linear Search)</h2>
+        <p>Şimdi de 500 kişilik bir müşteri listesinde "Ahmet" isimli kişinin listede olup olmadığını, varsa kaçıncı sırada olduğunu bulalım.</p>
+
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Kalabalıkta Arkadaşını Aramak 🕵️‍♂️</strong><br>
+            Bir sıraya dizilmiş insanlara tek tek "Sen Ahmet misin?", "Sen Ahmet misin?" diye sorarak ilerlersiniz. Ahmet'i bulduğunuz an aramayı durdurursunuz. Eğer kuyruğun sonuna gelirseniz ve kimse "Evet" demezse, Ahmet orada yoktur.
+        </div>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">String</span>[] musteriler = {"Ayşe", "Mehmet", "Elif", "Ahmet", "Zeynep"};
+<span class="keyword">String</span> arananKisi = "Ahmet";
+<span class="keyword">boolean</span> bulunduMu = <span class="keyword">false</span>; <span class="comment">// Başlangıçta yok varsayıyoruz</span>
+
+<span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; musteriler.length; i++) {
+    
+    <span class="comment">// Sıradaki kişi aradığımız kişi mi?</span>
+    <span class="keyword">if</span> (musteriler[i].equals(arananKisi)) {
+        System.out.println(arananKisi + " bulundu! Sıra numarası: " + i);
+        bulunduMu = <span class="keyword">true</span>;
+        
+        <span class="comment">// Bulduğumuz için aramaya devam etmeye gerek yok, döngüyü KIRIYORUZ (break)</span>
+        <span class="keyword">break</span>; 
+    }
+}
+
+<span class="comment">// Eğer döngü bittiğinde bulunduMu hala false ise, listede yoktur.</span>
+<span class="keyword">if</span> (bulunduMu == <span class="keyword">false</span>) {
+    System.out.println("Maalesef " + arananKisi + " listede yok.");
+}
+</pre>
+        </div>
+
+        <div class="info-box">
+            <strong>Sihirli Kelime: "break" 🛑</strong><br>
+            Döngüleri erkenden durdurmak için <code>break</code> komutunu kullanırız. 1000 kişilik listede aradığımız kişiyi 3. sırada bulduysak, boşuna 997 kişiye daha sormak bilgisayarı yorar. <code>break</code> bizi bu yükten kurtarır!
+        </div>
+    </section>
+
+    <section>
+        <h2>Tebrikler! Problem Çözücüsünüz 🛠️</h2>
+        <p>Bilgisayarın o müthiş işlem gücünü kendi mantığınızla yönlendirmeyi başardınız. Arama ve bulma algoritmaları, bugün kullandığımız Google gibi devasa arama motorlarının en temel atasıdır. Artık siz de bu temel mantığa hakimsiniz!</p>
+    </section>
+
+</body>
+</html>
