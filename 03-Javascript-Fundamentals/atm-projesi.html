@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders 20: Büyük Final - Konsol ATM Projesi</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: #f7df1e;
+            margin: 0;
+            font-size: 2.8em;
+        }
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #f7df1e;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        .analogy, .info-box, .warning-box {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .analogy {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #ebf5ff;
+            border-left: 5px solid #3182ce;
+        }
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+        }
+        .code-block {
+            background-color: #2d3748;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #f6e05e;
+            font-weight: bold;
+        }
+        .keyword {
+            color: #f56565;
+            font-weight: bold;
+        }
+        .comment {
+            color: #a0aec0;
+            font-style: italic;
+        }
+        ul {
+            font-size: 1.1em;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ders 20: Backend Büyük Finali</h1>
+        <p>Tüm Bildiklerimizi Birleştiriyoruz: Konsol ATM Uygulaması 🏦</p>
+    </header>
+
+    <section>
+        <h2>1. Projemizin Amacı</h2>
+        <p>Bu projede OOP (Nesne Yönelimli Programlama) ve algoritmaları bir araya getireceğiz. Kullanıcıya siyah ekranda (konsolda) bir menü sunacağız. Kullanıcı klavyeden seçim yapacak ve sistemimiz kapsülleme (encapsulation) kurallarına uygun olarak hesap bakiyesini güncelleyecek.</p>
+    </section>
+
+    <section>
+        <h2>2. Yeni Bir Kavram: Kullanıcıdan Veri Almak (Scanner)</h2>
+        <p>Frontend bölümünde kullanıcıdan veriyi HTML'deki <code>&lt;input&gt;</code> kutularından alıyorduk. Ancak saf bir arka plan (Java/Backend) uygulamasında klavyeden yazılanları okumak için özel bir alete ihtiyacımız var.</p>
+
+        <div class="info-box">
+            <strong>Scanner (Tarayıcı) Sınıfı 📡</strong><br>
+            Bilgisayarın klavyesini dinleyen bir kulaktır. <code>Scanner klavye = new Scanner(System.in);</code> diyerek bu kulağı aktif ederiz. Daha sonra <code>klavye.nextInt();</code> dediğimizde program durur ve kullanıcının bir sayı yazıp Enter'a basmasını bekler.
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Sonsuz Menü: "While" Döngüsü</h2>
+        <p>ATM'ler siz "Kartı İade Et" tuşuna basana kadar kapanmaz, sürekli size ana menüyü gösterir. Bunu sağlamak için <strong>While (Sürece)</strong> döngüsünü kullanırız.</p>
+
+        <div class="analogy">
+            <strong>Kafamızda Canlandıralım: Bekçi Köpeği 🐕</strong><br>
+            While döngüsü "şart doğru olduğu SÜRECE içindeki kodları tekrarla" demektir. <code>while(uygulamaCalisiyorMu == true)</code> dersek, biz o değişkeni "false" yapana kadar menü ekranda dönüp duracaktır.
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Proje Kodları (Tüm Parçalar Birleşiyor)</h2>
+        <p>Aşağıdaki kodu inceleyin. Önce Kapsüllenmiş bir Sınıf (BankaHesabi), ardından da onu kontrol eden sonsuz bir döngü menüsü göreceksiniz.</p>
+
+        <div class="code-block">
+<pre>
+<span class="keyword">import</span> java.util.Scanner; <span class="comment">// Klavye dinleyicisini projeye dahil ettik</span>
+
+<span class="comment">// 1. ADIM: NESNEMİZİ VE KURALLARINI OLUŞTURALIM</span>
+<span class="keyword">class</span> BankaHesabi {
+    <span class="keyword">private int</span> bakiye = 1000; <span class="comment">// Kapsülleme (Dışarıdan doğrudan ulaşılamaz)</span>
+
+    <span class="keyword">public int</span> getBakiye() {
+        <span class="keyword">return</span> bakiye;
+    }
+
+    <span class="keyword">public void</span> paraYatir(<span class="keyword">int</span> miktar) {
+        <span class="keyword">if</span>(miktar &gt; 0) {
+            bakiye = bakiye + miktar;
+            System.out.println(miktar + " TL hesabınıza eklendi.");
+        }
+    }
+
+    <span class="keyword">public void</span> paraCek(<span class="keyword">int</span> miktar) {
+        <span class="keyword">if</span>(miktar &lt;= bakiye && miktar &gt; 0) {
+            bakiye = bakiye - miktar;
+            System.out.println(miktar + " TL çektiniz.");
+        } <span class="keyword">else</span> {
+            System.out.println("Hata: Yetersiz bakiye veya geçersiz işlem!");
+        }
+    }
+}
+
+<span class="comment">// 2. ADIM: ANA PROGRAM (ATM MENÜSÜ)</span>
+<span class="keyword">public class</span> AnaProgram {
+    <span class="keyword">public static void</span> main(String[] args) {
+        
+        Scanner klavye = <span class="keyword">new</span> Scanner(System.in);
+        BankaHesabi hesap = <span class="keyword">new</span> BankaHesabi(); <span class="comment">// Müşterimizin hesabı oluştu</span>
+        
+        <span class="keyword">boolean</span> sistemAcik = <span class="keyword">true</span>;
+
+        System.out.println("--- KODLAMA BANKASINA HOŞ GELDİNİZ ---");
+
+        <span class="comment">// Sonsuz ATM Döngüsü</span>
+        <span class="keyword">while</span>(sistemAcik) {
+            System.out.println("\n1- Bakiye Sorgula");
+            System.out.println("2- Para Yatır");
+            System.out.println("3- Para Çek");
+            System.out.println("4- Çıkış Yap");
+            System.out.print("Seçiminiz: ");
+            
+            <span class="keyword">int</span> secim = klavye.nextInt(); <span class="comment">// Kullanıcıdan sayı al</span>
+
+            <span class="keyword">if</span>(secim == 1) {
+                System.out.println("Mevcut Bakiyeniz: " + hesap.getBakiye() + " TL");
+            } 
+            <span class="keyword">else if</span>(secim == 2) {
+                System.out.print("Yatırılacak tutar: ");
+                <span class="keyword">int</span> tutar = klavye.nextInt();
+                hesap.paraYatir(tutar);
+            } 
+            <span class="keyword">else if</span>(secim == 3) {
+                System.out.print("Çekilecek tutar: ");
+                <span class="keyword">int</span> tutar = klavye.nextInt();
+                hesap.paraCek(tutar);
+            } 
+            <span class="keyword">else if</span>(secim == 4) {
+                System.out.println("Kartınız iade ediliyor. İyi günler!");
+                sistemAcik = <span class="keyword">false</span>; <span class="comment">// Döngüyü kırar ve programı bitirir</span>
+            } 
+            <span class="keyword">else</span> {
+                System.out.println("Lütfen 1 ile 4 arasında geçerli bir tuşa basın.");
+            }
+        }
+    }
+}
+</pre>
+        </div>
+
+        <div class="warning-box">
+            <strong>Switch - Case Kullanımı</strong><br>
+            Yukarıdaki uzun <code>if - else if</code> zinciri yerine, menü tasarımlarında genellikle <code>switch (secim) { case 1: ... break; }</code> yapısı da tercih edilebilir. İkisi de aynı işi yapar, hangisi kolayınıza geliyorsa onu seçin!
+        </div>
+    </section>
+
+    <section>
+        <h2>Tebrikler! Sen Bir Geliştiricisin 🎓</h2>
+        <p>Sadece tasarımları kodlamakla kalmadınız, arkada çalışan beyinleri, nesneleri, güvenlik kurallarını (kapsülleme) ve veri akışını yönettiniz. Bu proje ile programlama mantığının temellerini başarıyla bitirdiniz!</p>
+    </section>
+
+</body>
+</html>
