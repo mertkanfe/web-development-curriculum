@@ -4,34 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS</title>
-    <link rel="stylesheet" href="css/kodluyoruz.css" />
+    <link rel="stylesheet" href="css/external.css" />
     <!-- Internal CSS: -->
     <style>
+      body {
+        background-color: rgb(81, 150, 81);
+        font-family: Arial, sans-serif;
+      } 
       h2 {
         color: red;
-        font-size: 64px;
+        font-size: 32px;
       }
       p {
         color: blue;
-        font-size: 40px;
+        font-size: 22px;
       }
     </style>
   </head>
   <body>
     <!-- 
-    
     Inline CSS -> Etiket içinde kullanımı
     Internal CSS -> Head içinde style etiketinde yazılır.
     External CSS -> Head içinde link belirtilerek yazılır.
-    
     -->
 
-    <!-- inline css: -->
-    <h1 style="color: purple">CSS Deneme</h1>
-
-    <h2>Inline CSS</h2>
+    <h1>CSS3 | Inline(Etikete Özel), Internal(Aynı Dosyada) ve External(CSS Dosyasında) Kullanımı #3</h1>
     <p>Lorem ipsum dolor sit.</p>
     <p>Lorem ipsum dolor sit amet consectetur.</p>
-    <h2>Internal CSS</h2>
+
+    <h3>Internal CSS</h3>
+    <p>
+      Internal CSS (Dahili CSS), bir HTML sayfasının stil kurallarını doğrudan o sayfanın head bölümü içerisine yazma yöntemidir.
+
+      Stil kodları, style ve style etiketleri arasına alınarak web sayfasının tamamına uygulanır. Bu yöntem, CSS kodlarını HTML etiketlerinin içine tek tek yazmak (Inline CSS) yerine, sayfa düzeyinde tek bir yerde toplamayı sağlar.
+    </p>
+
+     <h3>External CSS</h3>
+     <p>
+      External CSS (Harici CSS), web sayfanızın stil kodlarını HTML dosyasından tamamen ayırarak, .css uzantılı bağımsız bir dosyada toplama yöntemidir.
+
+      Bu yöntem, modern web geliştirme süreçlerinde en çok tercih edilen ve standart kabul edilen yaklaşımdır. HTML dosyanız sadece sayfa yapısını ve içeriğini tutarken, tasarım ve görünümle ilgili tüm kurallar bu harici CSS dosyasında saklanır.
+      1. CSS Dosyasını Oluşturmak
+      Öncelikle sadece CSS kodlarının yer alacağı, örneğin stil.css adında bir dosya oluşturulur. Bu dosyanın içinde style etiketleri kullanılmaz, doğrudan CSS kuralları yazılır
+      2. HTML Dosyasına Bağlamak
+      Oluşturulan bu .css dosyasını HTML sayfasına tanıtmak için, HTML'in head bölümüne link etiketi eklenir
+
+     </p>
   </body>
 </html>
