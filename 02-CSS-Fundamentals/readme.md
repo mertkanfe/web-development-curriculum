@@ -31,17 +31,24 @@ Sıfırdan modern ve tasarımsal açıdan göze hoş gelen çok sayfalı bir web
 * **CSS Kuralları:** DRY (Don't Repeat Yourself) prensibine sadık kalınarak kendini tekrar eden kodlardan kaçınılmalı (Gerekirse External CSS tercih edilmeli).
 * **İpucu:** Ana sayfadaki listelerin noktalarını ortalamak için `list-style-position: inside;` kullanılabilir.
 
+![Görev 1 Ekran Görüntüsü](/img/Css-gorev-1.png)
+
+
 ### 📜 Ödev 2: Geçmişe Yolculuk (Google 1998 Ana Sayfası)
 İnternet arşivi olan Wayback Machine üzerindeki verilerden yararlanarak, Google'ın 1998 yılındaki ilk ham sürümünü CSS yetenekleri ile klonlama görevi.
 * **Amaç:** Temel HTML/CSS becerilerini saf tasarım yeteneğiyle harmanlamak.
 * **Görsel Materyal:** Görevde [Google 1998 Logosu](https://web.archive.org/web/19990504112211im_/http://www.google.com/google.jpg) kullanılmalıdır.
 * **Kural:** Butonların çalışması zorunlu değildir, önemli olan tasarımsal benzerlik yakalamak ve kod içerisinde bolca açıklama satırına (`/* yorum */`) yer vermektir.
 
+![Görev 2 Ekran Görüntüsü](/img/Css-gorev-2.png)
+
 ### 🌐 Ödev 3: Günümüz Dünyası (Modern Google Ana Sayfası)
 Yıllar içinde evrilen ve bugünkü minimalist haline kavuşan modern Google ana sayfasını (2019-Günümüz şablonu) CSS ile yeniden inşa etme görevi.
 * **Referans Link:** [Google Wayback Arşivi](https://web.archive.org/web/20191130234759if_/https://www.google.com/)
 * **Amaç:** Arama çubuğu, buton yerleşimleri, hizalamalar ve modern web elementlerinin konumlandırılmasını (Box Model mantığını) kusursuzlaştırmak.
 * **Kural:** Tasarımın aslına olabildiğince sadık kalınmalı ve temiz kod prensipleriyle yorum satırları ihmal edilmemelidir.
+
+![Görev 3 Ekran Görüntüsü](/img/Css-gorev-3.png)
 
 ---
 

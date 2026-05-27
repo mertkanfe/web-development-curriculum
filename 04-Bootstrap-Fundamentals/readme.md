@@ -31,20 +31,28 @@ Modüller sırasıyla teorik altyapıyı oluşturmakta; hemen ardından gelen 4 
 ### 🎸 Ödev 1: Müzik Aleti Satış Sitesi (Bootstrap Modernizasyonu)
 CSS temel eğitiminde statik olarak tasarlanan müzik aleti satış sitesini Bootstrap yetenekleriyle tamamen responsive ve modern bir yapıya kavuşturuyoruz.
 
+![Görev 1 Ekran Görüntüsü](/img/Bootstrap-gorev-1.png)
+
 ---
 
 ### 📸 Ödev 2: Instagram Arayüz Klonu (Clone)
 Popüler sosyal medya platformu Instagram'ın masaüstü ve mobil uyumlu arayüz elementlerinin Bootstrap ve özel CSS dokunuşlarıyla simüle edilmesi.
+
+![Görev 2 Ekran Görüntüsü](/img/Bootstrap-gorev-2.png)
 
 ---
 
 ### 💼 Ödev 3: LinkedIn Arayüz Klonu (Clone)
 Profesyonel iş ağı LinkedIn'in katmanlı ve grid yoğunluklu ana sayfa yapısının responsive kurallara göre inşa edilmesi.
 
+![Görev 3 Ekran Görüntüsü](/img/Bootstrap-gorev-3.png)
+
 ---
 
 ### 📝 Ödev 4: Medium Arayüz Klonu (Clone)
 Metin odaklı, tipografinin ve minimalist beyaz boşlukların (whitespace) ön planda olduğu popüler blog platformu Medium'un ana sayfa ve makale listeleme arayüzünün kurgulanması.
+
+![Görev 4 Ekran Görüntüsü](/img/Bootstrap-gorev-4.png)
 
 ---
 
