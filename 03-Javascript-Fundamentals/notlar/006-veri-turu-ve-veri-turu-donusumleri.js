@@ -1,4 +1,4 @@
-// ********** Veri Turunu Ogrenmek ve Veri Turu Donusumleri ********** 
+// ********** Değişken Türünü Kontrol Etmek ve Değişken Türünü Değiştirmek #6 ********** 
 
 // veri turunu ogrenmek typeof:
 let price = 111

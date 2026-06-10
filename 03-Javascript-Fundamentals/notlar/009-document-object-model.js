@@ -1,4 +1,5 @@
-// DOM
+//DOM İLE ÇALIŞMAK
+// ********** Document Object Model (DOM) Nedir #9 ********** 
 // https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
 
 // pathname

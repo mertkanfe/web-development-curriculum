@@ -1,4 +1,5 @@
-// ********** Number Veri Turu ile Calismak ********** 
+// ********** Number Veri Turu Kullanımı, Temel Aritmetik İşlemler, İşlem Önceliği, Arttırma ve Azaltma İşlemleri #4 ********** 
+
 // number veri turu tanimlamak:
 let price = 100
 let tax = 0.18
@@ -13,15 +14,29 @@ console.log(
 
 let stringNumber = "11"
 console.log(stringNumber)
-let newNumber = Number(stringNumber)
+let newNumber = Number(stringNumber) // içerisine istediğimiz bilgiyi gönderebiliyoruz
 console.log(newNumber)
 console.log("Number Constructor icine bilgi gonderildi:", Number("111"))
+
+//4 işlem
+var result = 3+5;
+    console.log(result);
+    //8 
+var result = 5-2;
+    console.log(result);
+    //3
+var result = 5*2;
+    console.log(result);
+    //10
+var result = 6/3;
+    console.log(result);
+    //2
 
 // arttirma ve azaltma islemleri:
 let counter = 320
 counter = counter + 1 // uzun yontem
 counter += 1;
-counter ++;
+counter ++; // en iyi yontem
 console.log(counter)
 
 counter --;
@@ -57,4 +72,4 @@ console.log("Asagi Yuvarlama:", Math.floor(1.9) )  // -> 1
 console.log("Yukari Yuvarlama:", Math.ceil(1.9) ) // -> 2
 
 // yakina yuvarlama islemi -> Math.round :
-console.log("Yakina Yuvarlama: ", Math.round(1.5) ) // 1.4 ->1, 1.5 ->
+console.log("Yakina Yuvarlama: ", Math.round(1.5) ) // 1.4 ->1, 1.5 ->2

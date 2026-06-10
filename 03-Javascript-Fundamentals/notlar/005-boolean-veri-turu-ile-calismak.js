@@ -1,4 +1,4 @@
-// ********** Boolean Veri Turu ile Calismak ********** 
+// ********** Boolean Veri Turu ile Calismak #5 ********** 
 
 // 0 ve 1'i Anlamak ->
 let isActive = false // 0
@@ -10,6 +10,7 @@ let userName;
 let isUserName = Boolean(userName)
 console.log(isUserName)
 
+// çıktıları
 Boolean("11") // true
 Boolean("0") // true
 Boolean("") // false

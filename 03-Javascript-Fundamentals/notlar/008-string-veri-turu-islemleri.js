@@ -1,9 +1,9 @@
-// ********** String Veri Turu Islemleri ********** 
+// ********** String Veri Turu Islemleri #8 ********** 
 // https://www.w3schools.com/jsref/jsref_obj_string.asp
 
-let email = "hakanyalcinkaya@gmail.com"
-let firstName = "hakan"
-let lastName = "YALCINKAYA"
+let email = "mertkanfe@gmail.com"
+let firstName = "Mert"
+let lastName = "KANDEMİR"
 
 // string karakter sayisi -> length
 console.log( email.length )
@@ -18,11 +18,11 @@ console.log(firstName)
 
 firstName = firstName.toLowerCase()
 console.log(firstName)
+
 // String Icinde Istedigimiz Bilgiyi Aramak ve Yerini Bulmak -> search:
 console.log(email.search("@"))
 console.log( email[15] )
-
-email.search('olmayan') // -1
+email.search('olmayan') // bir şeyi aratınca -1 sonucunu getiriyor.
 
 // belli bir yere kadar al -> slice :  (domain bilgisi)
 let DOMAIN = email.slice( email.search("@") + 1)
