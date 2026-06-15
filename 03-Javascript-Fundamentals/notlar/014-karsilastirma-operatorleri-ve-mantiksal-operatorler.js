@@ -1,8 +1,9 @@
-// ********** Karsilastirma Operatorleri ve Mantiksal Operatorler **********
+//KARAR YAPILARI - KOŞULLAR
+// ********** Karşılaştırma Operatörleri ve Mantıksal Operatörler #14 **********
 // https://www.w3schools.com/js/js_comparisons.asp
 
 let price = "0"
-let user = "hakan"
+let user = "mert"
 
 // == Eşitse
 console.log("== :", price == 1 )
@@ -26,7 +27,6 @@ console.log("price > 200", price > 200)
 
 // >= Büyük veya eşitse
 console.log("price >= 100", price >= 100)
-
 
 // && ve
 price = 0

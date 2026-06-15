@@ -1,4 +1,4 @@
-// ********** liste icerisindeki son elemana ulasmak veya eleman eklemek **********
+// ********** Liste içerisindeki Öğeye Erişmek ve Yeni Öğe Eklemek #12 **********
 
 let lastChild = document.querySelector("ul#list>li:last-child")
 lastChild.innerHTML = "son oge degisti..."
