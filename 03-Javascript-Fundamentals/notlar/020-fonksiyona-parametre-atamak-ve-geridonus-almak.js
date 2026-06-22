@@ -1,4 +1,4 @@
-// ********** Fonksiyonlara Parametreler Atamak ve Fonksiyondan Geridonus Almak **********
+// ********** Fonsiyona Parametre (params) ve Geridönüş (return) Eklemek #20 **********
 
 // Temel Kurallar:
 // 1: Bir Fonksiyon Bir veya Birden Fazla Parametre Alabilir veya Hic Almayabilir

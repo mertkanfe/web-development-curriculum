@@ -13,15 +13,20 @@
             color: red
         }
     </style> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Kodluyoruz - Front-end 101</h1>
+    <h1 id="greeting">Kodluyoruz - Front-End 101</h1>
 
-    <!-- 010 bolumundeki islemler;
+    <!-- 010 dom icerisinden oge secimi ve duzenleme islemleri: 
     <h2 id="title">Merhaba Dunya</h2>
-    <ul>
-        <li><a href="#" id="kodluyoruzLink">link bilgisi</a></li>
-    </ul> -->
+    <ul id="list">
+        <li>
+            <a href="#" id="kodluyoruzLink">link bilgisi</a>
+        </li>
+    </ul>
+    -->
 
     <!-- 012 bolumundeki islemler;
     <ul id="list">
@@ -31,8 +36,52 @@
     </ul>
     -->
 
+     <!-- 015 - 016 - 017 - 018 - Kosullarla Calismak -->
+    <h2 id="info"></h2>
+
+    <!-- 023 - 026 - js counter 
+    <h3 id="counter">100</h3>
+    <button id="increase">Arttir</button>
+    <button id="decrease">Azalt</button>
+    -->
+
+    <!-- 027 - 029 form islemleri ve listeleme 
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-8 offset-sm-2">
+                <form id="userForm">
+                    <div class="mb-3">
+                        <label class="form-label" for="username">Kullanici Adi</label>
+                        <input class="form-control" type="text" name="username" id="username">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="score">Not Bilgisi</label>
+                        <input class="form-control" type="number" name="score" id="score">
+                    </div>
+                    <div class="mb-3">
+
+                        <button type="reset" class="btn btn-danger">Sifirla</button>
+                        <button type="submit" class="btn btn-success">Gonder</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-8 offset-sm-2 mt-4">
+                <ul class="list-group" id="userList">
+                    
+                  </ul>
+            </div>
+        </div>
+    </div>
+    -->
+
     <!-- Not:
     Her Çalışma İçin Ayrı Ayrı JS Dosyaları Oluşturuldu -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+
+
     <!-- <script src="001-hello-world.js"></script> -->
     <!-- <script src="002-degisken-tanimlama.js"></script> -->
     <!-- <script src="003-degisken-tanimlama-kurallari.js"></script> -->
@@ -51,6 +100,17 @@
     <!-- <script src="016-coklu-kosullar-ile-calismak.js"></script> -->
     <!-- <script src="017-ternary-operator-ile-short-if-kullanimi.js"></script> -->
     <!-- <script src="018-kosullarla-calismak-bolum-sonu-egzersizi.js"></script> -->
-    <script src="019-fonksiyonlar-neden-fonksiyonlara-ihtiyac-duyariz-ve-ilk-fonksiyonumuz.js"></script>
+    <!-- <script src="019-fonksiyonlar-neden-fonksiyonlara-ihtiyac-duyariz-ve-ilk-fonksiyonumuz.js"></script> -->
+    <!-- <script src="020-fonksiyona-parametre-atamak-ve-geridonus-almak.js"></script> -->
+    <!-- <script src="021-arrow-function-kullanimi.js"></script> -->
+    <!-- <script src="022-dom-etkinlikleriyle-calismak.js"></script> -->
+    <!-- <script src="023-functions-bolum-sonu-egzersizi.js"></script> -->
+    <!-- <script src="024-localStorage-icerisine-veri-eklemek-duzenlemek-ve-silmek.js"></script> -->
+    <!-- <script src="025-localStorage-icerisinde-farkli-turde-bilgilerin-saklanmasi.js"></script> -->
+    <!-- <script src="026-localStorage-bolum-sonu-egzersizi.js"></script> -->
+    <!-- <script src="027-form-submit-yonetimi.js"></script> -->
+    <!-- <script src="028-input-icerisindeki-veriyi-almak.js"></script> -->
+    <!-- <script src="029-formlarla-calismak-bolum-sonu-egzersizi.js"></script> -->
+    <script src="030-dizi-olusturmak-ve-dizi-icindeki-ilk-son-elemana-ulasmak.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
-// Local Storage:
+// LOCALSTORAGE
+// LocalStorage ile Veri Eklemek, Düzenlemek ve Silmek #24
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 
 
