@@ -1,4 +1,4 @@
-//DEĞİŞKENLERLE ÇALIŞMAK
+//DEĞİŞKENLERLE ÇALIŞMAK #2
 // ********** Değişken Tanımlama: var, ES6 ile Birlikte Gelen let ve const Değişken Tanımlama Yapısının Kullanımı, var ile Arasındaki Farklar #2 ********** 
 
 // var ile degisken tanimlamak:

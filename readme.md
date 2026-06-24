@@ -1,6 +1,6 @@
 # Web Geliştirme Müfredatı ve Eğitim Materyalleri
 
-Merhaba! Bu depo (repository), bir teknoloji merkezinde **Yazılım Programlama Eğitmeni** olarak görev yaptığım süre boyunca, lise öğrencileri için sıfırdan tasarladığım ve sunduğum eğitim materyallerini, ders notlarını ve uygulama ödevlerini içermektedir.
+Merhaba! Bu depo (repository), bir teknoloji merkezinde **Yazılım Programlama Eğitmeni** olarak görev yaptığım süre boyunca, lise öğrencileri için sıfırdan tasarladığım ve sunduğum eğitim materyallerini, ders notlarını ve uygulama ödevlerini içmektedir.
 
 Bu müfredat, öğrencileri web teknolojilerinin temellerinden alıp, fonksiyonel ve modern web arayüzleri geliştirebilecek seviyeye getirmek amacıyla yapılandırılmıştır.
 
@@ -28,7 +28,7 @@ Kariyerimi **Full Stack Developer** olarak ilerletirken, bir konuyu öğretmenin
     5. **Element Davranışları:** Blok (Block-level) ve Satır İçi (Inline) etiket farkları, nitelik (attribute) yönetimi (`id`, `class`, `href`, `src`).
     6. **Geliştirici Pratikleri:** Emmet kısayolları ile hızlı ve verimli kod yazımı.
 
-    * **🎯 Uygulamalar ve Ödevler:**
+* **🎯 Uygulamalar ve Ödevler:**
     * **Ödev 1 (Kişisel Profil ve Başlık Hiyerarşisi):** HTML dünyasına ilk adım; tarayıcı anatomisi, Türkçe karakter setleri ve `<h1>`-`<h4>` arası SEO dostu başlık hiyerarşisi çalışması.
     * **Ödev 2 (Gelişmiş Medya ve İç İçe Listeler):** Profil sayfasının; harici platform linkleri (`target="_blank"`), iç içe kategorize listeler ve semantik `<figure>`/`<figcaption>` mimarisiyle zenginleştirilmesi.
     * **Ödev 3 (Veri Tablolama ve Yemek Tarifi):** Çikolata Küpleri tarifi üzerinden `<table>` ile metrik hizalama, listelerle süreç yönetimi ve satır içi (inline) CSS ile görsel zenginleştirme çalışması.
@@ -55,13 +55,32 @@ Kariyerimi **Full Stack Developer** olarak ilerletirken, bir konuyu öğretmenin
 
 ---
 
-### 📂 [03-Javascript-Fundamentals](./04-Javascript-Fundamentals) (Yakında)
-*Web sayfalarına dinamizm kazandırmaya ve mantıksal kurgu oluşturmaya odaklanır.*
-- **Planlanan İçerik:** Değişkenler, Fonksiyonlar, DOM Manipülasyonu, ES6+ Standartları, Event Listeners ve Temel API İşlemleri (Fetch/Axios).
+### 📂 [03-JavaScript-Fundamentals](./03-JavaScript-Fundamentals)
+*Web sayfalarına dinamizm kazandırmaya, algoritma mantığı kurmaya ve veri yönetimini anlamaya odaklanır.*
+
+* **📖 Öğrenilen Konular & Temel Başlıklar:**
+    1. **JavaScript Dünyası & Değişkenler:** JS ekosistemi, "Hello World" geleneği, değişken tanımlama kuralları (`let`, `const`, `var`).
+    2. **Veri Türleri & Manipülasyon:** Number tipi ve aritmetik işlemler, Boolean mantığı, veri türü kontrolü/dönüşümü, Template Literals ve gelişmiş String metotları.
+    3. **Document Object Model (DOM):** DOM mimarisi, etiket/ID ile öğe seçimi, `prompt()` ile dinamik girdi, liste öğelerine erişim, yeni element üretimi ve CSS class yönetimi.
+    4. **Karar Yapıları & Koşullar:** Karşılaştırma ve mantıksal operatörler, `if / else / else if` blokları, kısa devre ve Ternary (`? :`) operatör kullanımı.
+    5. **Fonksiyonlar (Functions):** Fonksiyon anatomisi, parametre (`params`) ve geri dönüş (`return`) mekanizması, modern Arrow Functions (`=>`) kullanımı ve DOM event entegrasyonu.
+    6. **Tarayıcı Depolama (LocalStorage):** LocalStorage ile yerel veri ekleme, düzenleme, silme işlemleri ve kompleks veri türlerini (Object/Array) saklama stratejileri.
+    7. **Form Yönetimi:** `<form>` yakalama, `submit` olay kontrolü (`preventDefault`) ve input verilerinin güvenli şekilde okunması.
+    8. **Diziler (Arrays) & Döngüler:** Dizi oluşturma, eleman manipülasyonu, gelişmiş dizi metotları; `for`, `while`, `forEach` döngüleri; veri işleme araçları (`filter`, `map`), `break` ve `continue` ifadeleri.
+    9. **Nesne Oluşturma (Objects):** Key-Value yapısı, nesne metotları, JavaScript'in temel taşı olan Object yapısı ve modern `Destructuring` pratikleri.
+    10. **Hata Yönetimi & Senkronizasyon:** `try / catch` blokları ile güvenli kod yazımı ve **Fetch API** ile asenkron veri/API veri transferi.
+
+* **🎯 Uygulamalar ve Ödevler:**
+    * **Ödev 1 (Dinamik Saat ve Karşılama Ekranı):** Kullanıcıyı ismiyle karşılayan, `Date` objesini kullanarak anlık saati ve günü tarayıcıda dinamik olarak güncelleyen etkileşimli arayüz çalışması.
+    * **Ödev 2 (Gelişmiş To-Do List / Yapılacaklar Listesi):** DOM manipülasyonu yeteneklerini ölçen kapsamlı proje. Listeye boş veri eklenmesini engelleyen validasyon mimarisi, element ekleme/silme işlevleri ve "yapıldı" (checked) işaretleme mekanizması.
+    * **UX & UI Geliştirmeleri (Bootstrap Toast):** Hatalı girdi veya başarılı ekleme durumlarında sağ üst köşede beliren asenkron Bootstrap Toast bildirimlerinin entegrasyonu.
+    * **Bonus Etap (Hafıza Yönetimi):** Sayfa yenilense bile girilen görevlerin kaybolmamasını sağlayan Local Storage durum yönetimi (State Management) entegrasyonu.
+
+* **✅ Kazanımlar:** Algoritmik düşünme becerisi, DOM manipülasyonu ile dinamik arayüz yönetimi, tarayıcı depolama araçları kontrolü ve asenkron/olay güdümlü programlama temelleri.
 
 ---
 
-### 📂 [04-Bootstrap-Fundamentals](./03-Bootstrap-Fundamentals)
+### 📂 [04-Bootstrap-Fundamentals](./04-Bootstrap-Fundamentals)
 *Hazır bileşenler ve modern grid sistemleri kullanarak hızlı, responsive arayüzler geliştirmeye odaklanır.*
 
 * **📖 Eğitim İçerik Tablosu:**
