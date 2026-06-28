@@ -21,20 +21,18 @@ Kariyerimi **Full Stack Developer** olarak ilerletirken, bir konuyu öğretmenin
 *Web'in iskeletini, erişilebilir ve semantik yapılarla kurmaya odaklanır.*
 
 * **📖 Öğrenilen Konular & Temel Başlıklar:**
-    1. **Modern Standartlar:** HTML5 yapısı, getirdiği yenilikler ve standart anatomi (`<!DOCTYPE html>`, `<html>`, `<head>`, `<body>`).
-    2. **Semantik Web (SEO):** Arama motoru optimizasyonu ve erişilebilirlik için `<header>`, `<nav>`, `<main>`, `<article>`, `<footer>`, `<figure>`, `<figcaption>` kullanımı.
-    3. **Metin ve İçerik Yönetimi:** Hiyerarşik başlıklar (`<h1>`-`<h6>`), paragraflar (`<p>`), vurgular (`<strong>`, `<em>`), çizgiler (`<hr>`) ve açıklama satırları.
-    4. **Veri ve Bağlantı Yapıları:** Sıralı (`<ol>`) / sırasız (`<ul>`) listeler, tablolar (`<table>`), görseller (`<img>`) ve yönlendirme köprüleri (`<a>`).
-    5. **Element Davranışları:** Blok (Block-level) ve Satır İçi (Inline) etiket farkları, nitelik (attribute) yönetimi (`id`, `class`, `href`, `src`).
-    6. **Geliştirici Pratikleri:** Emmet kısayolları ile hızlı ve verimli kod yazımı.
+    1. **Modern Standartlar:** 
+    2. **Semantik Web (SEO):** 
+    3. **Metin ve İçerik Yönetimi:** 
+    4. **Veri ve Bağlantı Yapıları:** 
+    5. **Element Davranışları:** 
+    6. **Geliştirici Pratikleri:** 
 
 * **🎯 Uygulamalar ve Ödevler:**
-    * **Ödev 1 (Kişisel Profil ve Başlık Hiyerarşisi):** HTML dünyasına ilk adım; tarayıcı anatomisi, Türkçe karakter setleri ve `<h1>`-`<h4>` arası SEO dostu başlık hiyerarşisi çalışması.
-    * **Ödev 2 (Gelişmiş Medya ve İç İçe Listeler):** Profil sayfasının; harici platform linkleri (`target="_blank"`), iç içe kategorize listeler ve semantik `<figure>`/`<figcaption>` mimarisiyle zenginleştirilmesi.
-    * **Ödev 3 (Veri Tablolama ve Yemek Tarifi):** Çikolata Küpleri tarifi üzerinden `<table>` ile metrik hizalama, listelerle süreç yönetimi ve satır içi (inline) CSS ile görsel zenginleştirme çalışması.
-    * **Bölüm Sonu Çalışması (Kişisel Bilgi Sayfası):** Öğrenilen tüm etiketleri barındıran kapsamlı bir "Hakkımda" portfolyo sayfası.
-
-* **✅ Kazanımlar:** Temiz, W3C standartlarına uygun kodlama, Emmet ile 2 kat daha hızlı geliştirme hızı, SEO dostu kurgu yeteneği.
+    * **Ödev 1 (Kişisel Profil ve Başlık Hiyerarşisi):** 
+    * **Ödev 2 (Gelişmiş Medya ve İç İçe Listeler):** 
+    * **Ödev 3 (Yemek Tarifi):** 
+    * **Bölüm Sonu Çalışması (Kişisel Bilgi Sayfası):** 
 
 ---
 
@@ -42,16 +40,16 @@ Kariyerimi **Full Stack Developer** olarak ilerletirken, bir konuyu öğretmenin
 *Görsel tasarım, seçiciler ve modern yerleşim düzenlerine odaklanır.*
 
 * **📖 Öğrenilen Konular & Temel Başlıklar:**
-    1. **Temel CSS Giriş:** CSS3 mantığı, web dünyasındaki yeri ve HTML ile entegrasyonu.
-    2. **Stil Yönetim Yöntemleri:** Satır içi (Inline), Dahili (Internal) ve Harici (External) CSS kullanımları, öncelik sıraları.
-    3. **Seçiciler (Selectors):** Sınıf (Class) ve Benzersiz Seçici (ID) kuralları, HTML element ağacında hedefleme pratikleri.
-    4. **Kutu Modeli (Box Model):** Tasarımın temeli olan `margin`, `padding`, `width` ve `height` kavramlarının derinlemesine yönetimi.
-    5. **Tipografi & Düzen:** Genel font özellikleri (`font-family`, `font-size`), renk yönetimi ve listeleri hizalama (`list-style-position`).
+    1. **Temel CSS Giriş:** 
+    2. **Stil Yönetim Yöntemleri:** 
+    3. **Seçiciler (Selectors):** 
+    4. **Kutu Modeli (Box Model):** 
+    5. **Tipografi & Düzen:** 
 
 * **🎯 Uygulama Ödevleri:**
-    * **Ödev 1 (Çok Sayfalı Web Sitesi Tasarımı):** Google Fonts ve Colorhunt paletleriyle zenginleştirilmiş, DRY prensibine uygun çok sayfalı prototip.
-    * **Ödev 2 (Geçmişe Yolculuk: Google 1998):** Wayback Machine arşivi referans alınarak Google'ın ilk ham sürümünün CSS ile klonlanması.
-    * **Ödev 3 (Günümüz Dünyası: Modern Google):** Minimalist modern Google ana sayfa arayüzünün Box Model mantığıyla kusursuzlaştırılması.
+    * **Ödev 1 (Çok Sayfalı Web Sitesi Tasarımı):** 
+    * **Ödev 2 (Geçmişe Yolculuk: Google 1998):** 
+    * **Ödev 3 (Günümüz Dünyası: Modern Google):** 
 
 ---
 
@@ -59,24 +57,22 @@ Kariyerimi **Full Stack Developer** olarak ilerletirken, bir konuyu öğretmenin
 *Web sayfalarına dinamizm kazandırmaya, algoritma mantığı kurmaya ve veri yönetimini anlamaya odaklanır.*
 
 * **📖 Öğrenilen Konular & Temel Başlıklar:**
-    1. **JavaScript Dünyası & Değişkenler:** JS ekosistemi, "Hello World" geleneği, değişken tanımlama kuralları (`let`, `const`, `var`).
-    2. **Veri Türleri & Manipülasyon:** Number tipi ve aritmetik işlemler, Boolean mantığı, veri türü kontrolü/dönüşümü, Template Literals ve gelişmiş String metotları.
-    3. **Document Object Model (DOM):** DOM mimarisi, etiket/ID ile öğe seçimi, `prompt()` ile dinamik girdi, liste öğelerine erişim, yeni element üretimi ve CSS class yönetimi.
-    4. **Karar Yapıları & Koşullar:** Karşılaştırma ve mantıksal operatörler, `if / else / else if` blokları, kısa devre ve Ternary (`? :`) operatör kullanımı.
-    5. **Fonksiyonlar (Functions):** Fonksiyon anatomisi, parametre (`params`) ve geri dönüş (`return`) mekanizması, modern Arrow Functions (`=>`) kullanımı ve DOM event entegrasyonu.
-    6. **Tarayıcı Depolama (LocalStorage):** LocalStorage ile yerel veri ekleme, düzenleme, silme işlemleri ve kompleks veri türlerini (Object/Array) saklama stratejileri.
-    7. **Form Yönetimi:** `<form>` yakalama, `submit` olay kontrolü (`preventDefault`) ve input verilerinin güvenli şekilde okunması.
-    8. **Diziler (Arrays) & Döngüler:** Dizi oluşturma, eleman manipülasyonu, gelişmiş dizi metotları; `for`, `while`, `forEach` döngüleri; veri işleme araçları (`filter`, `map`), `break` ve `continue` ifadeleri.
-    9. **Nesne Oluşturma (Objects):** Key-Value yapısı, nesne metotları, JavaScript'in temel taşı olan Object yapısı ve modern `Destructuring` pratikleri.
-    10. **Hata Yönetimi & Senkronizasyon:** `try / catch` blokları ile güvenli kod yazımı ve **Fetch API** ile asenkron veri/API veri transferi.
+    1. **JavaScript Dünyası & Değişkenler:** 
+    2. **Veri Türleri & Manipülasyon:** 
+    3. **Document Object Model (DOM):** 
+    4. **Karar Yapıları & Koşullar:** 
+    5. **Fonksiyonlar (Functions):** 
+    6. **Tarayıcı Depolama (LocalStorage):** 
+    7. **Form Yönetimi:** 
+    8. **Diziler (Arrays) & Döngüler:** 
+    9. **Nesne Oluşturma (Objects):** 
+    10. **Hata Yönetimi & Senkronizasyon:** 
 
 * **🎯 Uygulamalar ve Ödevler:**
-    * **Ödev 1 (Dinamik Saat ve Karşılama Ekranı):** Kullanıcıyı ismiyle karşılayan, `Date` objesini kullanarak anlık saati ve günü tarayıcıda dinamik olarak güncelleyen etkileşimli arayüz çalışması.
-    * **Ödev 2 (Gelişmiş To-Do List / Yapılacaklar Listesi):** DOM manipülasyonu yeteneklerini ölçen kapsamlı proje. Listeye boş veri eklenmesini engelleyen validasyon mimarisi, element ekleme/silme işlevleri ve "yapıldı" (checked) işaretleme mekanizması.
-    * **UX & UI Geliştirmeleri (Bootstrap Toast):** Hatalı girdi veya başarılı ekleme durumlarında sağ üst köşede beliren asenkron Bootstrap Toast bildirimlerinin entegrasyonu.
-    * **Bonus Etap (Hafıza Yönetimi):** Sayfa yenilense bile girilen görevlerin kaybolmamasını sağlayan Local Storage durum yönetimi (State Management) entegrasyonu.
-
-* **✅ Kazanımlar:** Algoritmik düşünme becerisi, DOM manipülasyonu ile dinamik arayüz yönetimi, tarayıcı depolama araçları kontrolü ve asenkron/olay güdümlü programlama temelleri.
+    * **Ödev 1 (Dinamik Saat ve Karşılama Ekranı):** 
+    * **Ödev 2 (Gelişmiş To-Do List / Yapılacaklar Listesi):** 
+    * **UX & UI Geliştirmeleri (Bootstrap Toast):** 
+    * **Bonus Etap (Hafıza Yönetimi):** 
 
 ---
 
@@ -85,23 +81,23 @@ Kariyerimi **Full Stack Developer** olarak ilerletirken, bir konuyu öğretmenin
 
 * **📖 Eğitim İçerik Tablosu:**
 
-    | No | Ders Başlığı | Kapsam ve Açıklama |
+    | No | Ders Başlığı |
     | :---: | :--- | :--- |
-    | **#1** | **Bootstrap Giriş** | Kurulum, CDN entegrasyonu ve framework mimarisi. |
-    | **#2** | **12'lik Izgara (Grid)** | Izgara mantığı, satır ve sütun oranlarının matematiksel dağılımı. |
-    | **#3** | **Layout İskeleti** | Genel tutucu (`Container`), Satır (`Row`) ve Sütun (`Col`) yapısı. |
-    | **#4** | **Responsive Kırılımlar** | `sm`, `md`, `lg`, `xl`, `xxl` breakpoints ile cihaz duyarlı çalışma. |
-    | **#5** | **Hizalama Sınıfları** | `Row` bloklarında dikey/yatay esneklik ve konumlandırma özellikleri. |
-    | **#6** | **Tasarım Standartları** | Tema renkleri (`primary`, `success`), yazı fontları, margin ve padding (`m-*`, `p-*`). |
-    | **#7** | **Responsive Görünürlük** | Ekran boyutuna göre element gizleme/gösterme (`d-none`, `d-block`). |
-    | **#8** | **Gelişmiş Grid Pratikleri** | Kolonlar arası boşluk/kaydırma (`offset-*`) ve sıralama değiştirme (`order-*`). |
-    | **#9** | **UI Components** | Navbar, Card, Modal, Carousel, Button gibi hazır arayüz elemanları. |
+    | **#1** | **Bootstrap Giriş** |
+    | **#2** | **12'lik Izgara (Grid)** |
+    | **#3** | **Layout İskeleti** |
+    | **#4** | **Responsive Kırılımlar** |
+    | **#5** | **Hizalama Sınıfları** |
+    | **#6** | **Tasarım Standartları** |
+    | **#7** | **Responsive Görünürlük** |
+    | **#8** | **Gelişmiş Grid Pratikleri** |
+    | **#9** | **UI Components** |
 
 * **🎯 Uygulama Ödevleri ve Klonlar:**
-    * **Ödev 1 (Müzik Aleti Satış Sitesi):** Statik tasarlanan sitenin Bootstrap ile responsive hale getirilmesi.
-    * **Ödev 2 (Instagram Arayüz Klonu):** Masaüstü ve mobil uyumlu Instagram elementlerinin simülasyonu.
-    * **Ödev 3 (LinkedIn Arayüz Klonu):** Yoğun grid yapısına sahip katmanlı profesyonel ağ ana sayfa inşası.
-    * **Ödev 4 (Medium Arayüz Klonu):** Minimalist beyaz boşlukların ve tipografinin ön planda olduğu blog arayüz tasarımı.
+    * **Ödev 1 (Müzik Aleti Satış Sitesi):** 
+    * **Ödev 2 (Instagram Arayüz Klonu):** 
+    * **Ödev 3 (LinkedIn Arayüz Klonu):** 
+    * **Ödev 4 (Medium Arayüz Klonu):** 
 
 ---
 
