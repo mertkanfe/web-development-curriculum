@@ -1,102 +1,87 @@
-# 🌐 HTML Fundamentals (HTML Temelleri) Eğitimi ve Çalışmaları
+# 📂 HTML Fundamentals (Temelleri)
 
-Bu depo (repository), web geliştirme yolculuğumun ilk ve en önemli adımı olan **HTML Fundamentals (HTML Temelleri)** eğitiminde öğrendiğim konuları, aldığım notları ve yaptığım pratik çalışmaları içermektedir. 
-
-Eğitim boyunca web sayfalarının iskeletini oluşturmayı, anlamsal (semantic) kod yazmayı ve modern web standartlarını öğrendim. Eğitimi pekiştirmek adına **Bölüm Sonu Çalışması** ve **3 Adet Ödev** başarıyla tamamlanmıştır.
+Bu klasör, modern web geliştirmenin temel taşı olan HTML5 standartlarını kavramak, semantik web sayfaları inşa etmek ve tarayıcıların yapısal iskeletini anlamak amacıyla hazırlanan ders notlarını, kod örneklerini ve pekiştirme egzersizlerini barındırmaktadır.
 
 ---
 
-## 📚 Eğitim İçeriği ve Öğrenilen Konular
+## 📚 Ders İçeriği ve Konu Başlıkları
 
-Eğitim süresince aşağıdaki 15 temel başlık ve pratikler üzerinde çalışılmıştır:
+### 💡 HTML Dünyasına Giriş
+* **#1** | HTML5 Nedir? Evrimi ve Web Standartlarındaki Rolü
+* **#2** | HTML Etiketleri (Tags) Nedir? Element ve Öznitelik (Attribute) Kavramları
+* **#3** | Başlık Etiketleri (`<h1>` - `<h6>`) ve Arama Motorları (SEO) İçin Önemi
+* **#4** | İlk Sayfam: Temel Bir HTML Dosyasının Canlıya Alınması
+* **#5** | Açıklama Satırları (Yorum Satırı) Kullanımı ve Kod Düzenindeki Rolü
 
-1. **#HTML5:** Modern web dünyasının standartı olan HTML5 yapısı ve getirdiği yenilikler.
-2. **#HTML-etiketleri:** Tarayıcıya içeriğin ne olduğunu söyleyen etiketlerin (tags) çalışma mantığı.
-3. **#Başlık-etiketi:** Sayfa başlığı (`<title>`) yönetimi ve arama motorları için önemi.
-4. **#İlk-sayfam:** Merhaba Dünya! İlk canlı HTML sayfasının oluşturulması.
-5. **#Açıklama-satırları:** Kod kalitesini artırmak için kendimize ve diğer geliştiricilere bıraktığımız notlar (``).
-6. **#Başlık-Paragraflar:** Hiyerarşik başlık yapıları (`<h1>` - `<h6>`) ve paragraf (`<p>`) etiketleri.
-7. **#Listeler:** Sıralı (`<ol>`) ve sırasız (`<ul>`) listeler ile veri organizasyonu.
-8. **#Emmet:** HTML kodlarını çok daha hızlı ve verimli yazmamı sağlayan kısayollar bütünü.
-9. **#Gorseller:** Web sayfasına görsel (`<img>`) ekleme, `alt` niteliği ve görsel yönetimi.
-10. **#Linkler:** Sayfalar arası veya dış kaynaklara köprü (`<a>`) kurma, `target` niteliği kullanımı.
-11. **#Blok-Inline-Elementler:** Sayfada tam satır kaplayan (Block-level) ve sadece içeriği kadar yer tutan (Inline) etiketlerin farkları ve davranışları.
-12. **#Ekstra-Ozellikler-Eklemek:** Etiketlere `id`, `class`, `href`, `src` gibi nitelikler (attributes) ekleyerek onları güçlendirme.
-13. **#HTML-Genel-Yapısı:** Bir HTML belgesinin standart anatomisi (`<!DOCTYPE html>`, `<html>`, `<head>`, `<body>`).
-14. **#Semantic-HTML:** Arama motoru optimizasyonu (SEO) ve erişilebilirlik için `<header>`, `<nav>`, `<main>`, `<article>`, `<footer>` gibi anlamlı etiketlerin kullanımı.
-15. **#Diger-Html-Etiketleri:** Metin içi vurgular (`<strong>`, `<em>`), çizgiler (`<hr>`) ve yardımcı diğer etiketler.
+### 📝 Metin ve Liste Yapıları
+* **#6** | Başlık ve Paragraflar (`<p>`) ile İçerik Düzenleme
+* **#7** | Listelerle Çalışmak: Sıralı (`<ol>`) ve Sırasız (`<ul>`) Liste Kullanımı
+* **#8** | Emmet Prefabrikasyonu ile Hızlı ve Verimli HTML Yazım Teknikleri
+
+### 🔗 Medya ve Bağlantı Yönetimi
+* **#9** | Görsellerle Çalışmak (`<img>` Etiketi, `src` ve `alt` Öznitelikleri)
+* **#10** | Linkler: Sayfa İçi, Sayfalar Arası ve Dış Bağlantı Köprüleri Kurmak (`<a>` ve `target="_blank"`)
+
+### 🏗️ Yapısal ve Semantik HTML
+* **#11** | Blok (Block) ve Satır İçi (Inline) Elementler Arasındaki Farklar ve Yerleşim Kuralları
+* **#12** | Ekstra Özellikler Eklemek: Küresel Öznitelikler (`id`, `class`, `style`, `title`)
+* **#13** | HTML Genel Yapısı (`<!DOCTYPE html>`, `<html>`, `<head>`, `<body>`, Metatalar)
+* **#14** | Semantik HTML (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`) ve Erişilebilirlik
+* **#15** | Diğer Önemli HTML Etiketleri (Vurgu Metinleri `<strong>`, `<em>`, Tablolar `<table>` ve Biçimlendirmeler)
+
+---
+
+## 🎯 Bölüm Sonu Çalışmaları (Ödevler)
+
+Klasör içerisindeki teorik bilgileri pekiştirmek amacıyla öğrencilere sunulan üç büyük pratik çalışma:
+
+### 📝 Ödev 1 - İlk Web Sayfamızı Oluşturmak
+Harika konular öğrendikten sonra sıra geldi ilk web sayfamızı tasarlamaya! Bu ödevde, temel HTML etiketlerini kullanarak kendinizi tanıtan basit ve temiz bir yapı oluşturmanız beklenmektedir.
+
+**Gereksinimler:**
+* Site açıldığında adınız ve soyadınız ana başlık (`<h1>`) şeklinde gösterilmelidir.
+* Ad-Soyadın hemen altında alt başlık (`<h2>`) olarak **"Hakkımda"** yazmalıdır.
+* Bu başlığın altında bir paragraf (`<p>`) içerisinde neler yaptığınızı ve nelerden hoşlandığınızı anlatmalısınız.
+* Web sitenizi kaydederken ana dosya adı olarak mutlaka `index.html` seçilmelidir.
+* Yazdığınız kod bloklarını ve ne işe yaradıklarını açıklayan **yorum satırları** eklenmelidir.
+
+![Görev 1 Ekran Görüntüsü](/img/Html-gorev-1.png)
 
 ---
 
-## 🛠️ Uygulamalar ve Ödevler
+### 📝 Ödev 2 - Kişisel Sayfamızı Detaylandırmak
+İlk ödevde attığımız temel üzerine, yeni öğrendiğimiz medya, listeler ve link yapılarını ekleyerek kişisel sayfamızı zenginleştirmeye ve geliştirmeye devam ediyoruz.
 
-* **🎯 Ödev 1 (Kişisel Profil ve İlgi Alanları Sayfası):**
-    HTML dünyasına ilk adımı simgeleyen, tarayıcı anatomisini ve metin tabanlı hiyerarşik yapıları kavramaya odaklanan ilk bireysel kodlama görevidir.
+**Gereksinimler:**
+* Sayfanıza kendinizi veya ilgi alanınızı yansıtan bir adet resim (`<img>`) ekleyin ve bu resmin altına açıklayıcı bir metin yazın.
+* Sevdiğiniz film, dizi ve kitapları temsil eden başlıklar oluşturun.
+* İçerikleri listelerken; ana kategoriler (Film, Dizi, Kitap) **Sıralı Liste (`<ol>`)**, bu kategorilerin içindeki maddeler ise **Bullet Liste / Sırasız Liste (`<ul>`)** olmalıdır.
+* Listelediğiniz film ve dizilerin en az bir tanesine **IMDb linki**, kitapların en az bir tanesine de **Goodreads linki** yönlendirmesi (`<a>`) ekleyin.
+* Kurduğunuz sayfa düzeninde blok (block) ve satır içi (inline) element özelliklerine dikkat ederek kullanım sergileyin.
 
-    * **📖 Projenin Amacı:**
-      Öğrencilerin bir web sayfasının en temel iskeletini kurması, tarayıcıya sayfa dili ve karakter kodlaması hakkında doğru talimatları vermeyi öğrenmesi ve içerik üretirken başlık ağırlıklarını (SEO hiyerarşisi) doğru kurgulaması amaçlanmıştır.
-
-    * **📋 Görev Kapsamındaki Teknik Kriterler:**
-        1. **Karakter Standartları:** Türkçe karakterlerin (`ç, ğ, ı, ö, ş, ü`) tüm tarayıcılarda ve işletim sistemlerinde bozulmadan, kusursuz render edilmesi için `<html lang="tr">` ve `<meta charset="UTF-8">` tanımlamalarının eksiksiz yapılması.
-        2. **Hiyerarşik Başlık Yönetimi (Heading Weight):** Arama motorlarının (Google vb.) sayfayı doğru indeksleyebilmesi için en baskın başlıktan (`<h1>`) detay başlıklara (`<h4>`) doğru kırılan, mantıksal ve sıralı bir başlık ağacının (`<h1>` -> `<h2>` -> `<h3>` -> `<h4>`) kurulması.
-        3. **Metin ve Paragraf Blokları:** Uzun metinlerin, kullanıcı deneyimini (UX) zedelememesi adına anlamlı `<p>` etiketleri ile bölümlere ayrılarak temiz bir tipografik akış elde edilmesi.
-
-    * **✅ Kazanımlar:** W3C standartlarında ilk HTML sayfasını oluşturma, tarayıcı etiket okuma mantığını kavrama, `h1-h6` etiketlerinin sadece "büyüklük/küçüklük" değil, birer anlamsal önem sırası olduğunu içselleştirme.
-
-    ![Görev 1 Ekran Görüntüsü](/img/html-gorev-1.png)
-
-    * **🎯 Ödev 2 (Gelişmiş Medya Entegrasyonu ve İç İçe Listeler):**
-    İlk görevde kazanılan metin hiyerarşisi becerilerini; dış bağlantı mimarileri, kategorize edilmiş veri listeleri ve semantik medya öğeleriyle birleştiren gelişmiş bir HTML yapısı çalışmasıdır.
-
-    * **📖 Projenin Amacı:**
-      Öğrencilerin web sayfalarında verileri gruplandırmayı (kategorizasyon) öğrenmesi, kullanıcı deneyimini bozmadan harici platformlara güvenli yönlendirmeler yapması ve görsel içerikleri modern HTML5 semantik standartlarına uygun şekilde dökümante etmesi amaçlanmıştır.
-
-    * **📋 Görev Kapsamındaki Teknik Kriterler:**
-        1. **Hibrit ve İç İçe Liste Yapıları (Nested Lists):** Sıralı listelerin (`<ol>`) içerisine anlamsal olarak alt kategoriler halinde sırasız listelerin (`<ul>`) entegre edilmesi ve karmaşık veri setlerinin düzenli bir şekilde hizalanması.
-        2. **Güvenli Dış Bağlantı Yönetimi:** IMDb ve Goodreads gibi popüler platformlara verilen köprülerde (`<a>`), kullanıcının mevcut sayfadan kopmaması adına `target="_blank"` niteliğinin (attribute) doğru kullanımı.
-        3. **Semantik Medya Yönetimi (HTML5 Media):** Görsellerin tek başına bırakılmayıp, `<figure>` etiketleri içine alınması ve görsele ait açıklamaların `<figcaption>` ile anlamsal olarak görsele bağlanması.
-        4. **İçerik İçi Vurgular (Inline Formatting):** Metin akışı içerisinde önemli kavramların `<strong>` (kalın) ve `<em>` (italik/vurgulu) etiketleri ile arama motorları ve ekran okuyucular için belirginleştirilmesi.
-
-    * **✅ Kazanımlar:** İç içe etiket ağacı (DOM Tree) mantığını kavrama, harici linkleme pratikleri kazanma, görselleri modern web standartlarına (Semantic Media) uygun yapılandırma disiplini.
-
-    ![Görev 2 Ekran Görüntüsü](/img/html-gorev-2.png)
-
-    * **🎯 Görev 3 (Veri Tablolama, Sayfa Düzeni ve Listeler - Yemek Tarifi):**
-    HTML etiketlerinin görsel düzenleme sınırlarını zorlayan, verileri tablo ve listelerle organize ederken satır içi (inline) stil mantığıyla tanışmayı sağlayan bir projedir.
-
-    * **📖 Projenin Amacı:**
-      Öğrencilerin yapısal verileri (hazırlanma süresi, porsiyon vb.) tablo mimarisiyle hizalaması, listeleri kullanım amacına göre (bağımsız maddeler için `<ul>`, sıralı adımlar için `<ol>`) ayırt etmesi ve CSS dünyasına adım atmadan önce temel renklendirme ve kutu özelliklerini satır içi dökümante etmesi amaçlanmıştır.
-
-    * **📋 Görev Kapsamındaki Teknik Kriterler:**
-        1. **Tablo ile Metrik Hizalama:** Kaç kişilik olduğu, hazırlama ve pişirme süreleri gibi özet bilgilerin `<table>` etiketi ve hücre özellikleri (`cellpadding`, `cellspacing`) kullanılarak ekranda simetrik bir düzene oturtulması.
-        2. **Mantıksal Ayrışmalı Listeler:** Tarif bileşenlerinin yapısına uygun olarak; malzemelerin sırasız liste (`<ul>`), yapılış aşamalarının ise kronolojik olarak sıralı liste (`<ol>`) ile kurgulanması.
-        3. **İlk Stil Deneyimi (Inline CSS Geçişi):** Saf HTML'in sınırlarından çıkılarak, `<span>` ve `<div>` elementlerine satır içi stil özellikleri (`background-color`, `border-radius`, `padding`) verilerek modern arayüz bileşenlerinin (badge/etiket tasarımı) simüle edilmesi.
-        4. **Sayfa Düzeni ve Gövde Özellikleri:** `<body bgcolor="...">` niteliği ile sayfa arka plan renginin yönetilmesi, `<center>` ve `<div>` (width/text-align) kombinasyonuyla içeriğin tarayıcı merkezine dengeli bir şekilde konumlandırılması.
-
-    * **✅ Kazanımlar:** Amaca uygun liste türü seçimi, temel HTML tablolama mantığı, metin tabanlı tasarım elementlerini (font-family, font-weight) kod seviyesinde yönlendirme becerisi ve satır içi stillerin kod okunabilirliğine etkisini görerek harici CSS (External) ihtiyacını kavrama.
-
-    ![Görev 3 Ekran Görüntüsü](/img/html-gorev-3.png)
-
-    * **🏆 Bölüm Sonu Çalışması (Çok Sayfalı Mini Web Sitesi Prototipi):**
-    HTML modülünde öğrenilen tüm semantik yapıları, sayfa yönlendirmelerini ve temel içerik elementlerini bir araya getiren kapsamlı bir bitirme projesidir.
-
-    * **📖 Projenin Amacı:**
-      Öğrencilerin statik bir web sitesinin mimarisini kavraması, sayfalar arası köprü (link) yapısını doğru kurması ve arama motoru dostu (SEO) semantik etiketleri hiyerarşik olarak kullanmayı pratik etmesi amaçlanmıştır.
-
-    * **📂 Proje Dosya Yapısı:**
-      ```text
-      ├── index.html          # Ana Sayfa (Blog Akışı ve Karışık Listeler)
-      ├── hakkimizda.html     # Hakkımızda Sayfası (Kurumsal Bilgi ve Sıralı Liste)
-      └── iletisim.html       # İletişim Sayfası (Adres ve Tıklanabilir İletişim Protokolleri)
-      ```
----
-
-## 🚀 Kazanımlar
-Bu çalışmalar sonucunda;
-- [x] Temiz, okunabilir ve W3C standartlarına uygun HTML kodu yazabiliyorum.
-- [x] Emmet kısayollarını kullanarak kodlama hızımı 2 katına çıkarabiliyorum.
-- [x] Blok ve inline elementlerin yerleşim mantığına hakimim.
-- [x] SEO dostu (Semantic) web sayfaları kurgulayabiliyorum.
+![Görev 2 Ekran Görüntüsü](/img/Html-gorev-2.png)
 
 ---
-💡 *Bu proje, Frontend yolculuğumun ilk kilometre taşıdır. Bir sonraki durak: **CSS ile Şekillendirme!***
+
+### 📝 Ödev 3 - HTML Elementleri ile Yemek Tarifi Sitesi
+Bu ödevde, en sevdiğiniz bir yemek ya da tatlının tarifini içeren profesyonel yapıda bir web sayfasını, şu ana kadar öğrendiğiniz tüm HTML etiket varyasyonlarını kullanarak kodlamanız istenmektedir.
+
+**Zorunlu Kullanılması Gereken HTML Etiketleri:**
+* **Yapısal Etiketler:** `<!DOCTYPE html>`, `<html>`, `<head>`, `<body>`, `<meta charset="UTF-8">`
+* **Metin Biçimlendirme:** `<h1>` (Ana yemek başlığı), `<h2>` (Malzemeler ve Hazırlanış alt başlıkları), `<p>` (Tarif açıklamaları ve giriş yazısı)
+* **Listeler:** `<ul>` (Malzemelerin listelenmesi için sırasız liste), `<ol>` (Adım adım hazırlanış aşamaları için sıralı liste)
+* **Vurgu:** Önemli ipuçları veya süreler için `<strong>` (Kalın yazı) veya `<em>` (İtalik yazı) kullanımı
+* **Medya ve Link:** `<img>` (Yemeğin iştah açıcı bir fotoğrafı), `<a>` (Tarifin alındığı kaynak siteye giden köprü bağlantı)
+* **Tablo (Opsiyonel / Ek Puan):** `<table>`, `<tr>`, `<td>` etiketleri kullanılarak yemeğin besin değerleri (Kalori, Protein vb.) veya hazırlama/pişirme sürelerini gösteren şık bir tablo yapısı.
+
+![Görev 3 Ekran Görüntüsü](/img/Html-gorev-3.png)
+
+---
+
+## 🛠️ Kurulum ve Çalıştırma
+
+Projeleri yerel bilgisayarınızda görüntülemek ve üzerinde çalışmak için aşağıdaki adımları takip edebilirsiniz:
+
+1. Depoyu klonlayın:
+   ```bash
+   git clone [https://github.com/kullanici_adi/repo_adi.git](https://github.com/kullanici_adi/repo_adi.git)

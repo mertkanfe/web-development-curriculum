@@ -1,26 +1,29 @@
-# CSS3 Fundamentals (CSS3 Temelleri) 🚀
+# 📂 CSS3 Fundamentals (Temelleri)
 
-Bu depo, CSS3'ün temel yapı taşlarını öğrenmek, web sayfalarını tasarlarken kullanılan temel kuralları anlamak ve pratik projelerle bu becerileri pekiştirmek amacıyla oluşturulmuş bir eğitim ve uygulama rehberidir.
-
-Proje kapsamında temel CSS teorisinden kutu modeline (Box Model) kadar birçok kritik konu işlenmiş ve öğrenilenleri pekiştirmek adına 3 adet kapsamlı ödev/proje eklenmiştir.
+Bu klasör, web sayfalarını görsel olarak şekillendirmek, modern arayüz tasarımları oluşturmak ve sayfa yerleşim (layout) kurallarını kavramak amacıyla hazırlanan ders notlarını, kod örneklerini ve pekiştirme egzersizlerini barındırmaktadır.
 
 ---
 
-## 📚 Konu Başlıkları
+## 📚 Ders İçeriği ve Konu Başlıkları
 
-Rehber boyunca sırasıyla aşağıdaki konu başlıkları ele alınmıştır:
+### 💡 CSS Dünyasına Giriş ve Entegrasyon
+* **#1** | CSS Nedir? Web Sayfalarındaki Rolü ve HTML ile İlişkisi
+* **#2** | Inline CSS (Satır İçi CSS) Nasıl Kullanılır? Avantaj ve Dezavantajları
+* **#3** | CSS Yöntemleri: Inline (Etikete Özel), Internal (Sayfaya Özel) ve External (Harici CSS Dosyası) Kullanımı ve Öncelik Sıralamaları (Specificity)
 
-* **#1 CSS3 | CSS3 Nedir?** – CSS'in mantığı, web dünyasındaki yeri ve HTML ile ilişkisi.
-* **#2 CSS3 | Inline CSS Nasıl Kullanılır?** – Etikete özel (satır içi) stil tanımlama yöntemleri.
-* **#3 CSS3 | Stil Yönetim Yöntemleri** – Inline (Etikete Özel), Internal (Dahili/Aynı Dosyada) ve External (Harici/CSS Dosyasında) kullanım farkları, avantajları ve öncelik sıralamaları.
-* **#4 Açıklama Satırları ve Genel Font Özellikleri** – CSS kodunda yorum satırı bırakma kuralları ve temel tipografi (font-family, font-size vb.) özellikleri.
-* **#5 CSS3 | CSS ile Class ve ID Kullanımı** – Sınıf (Class) ve Benzersiz Seçici (ID) tanımlama kuralları, aralarındaki kritik farklar.
-* **#6 CSS3 | Seçiciler (Selectors) ile Çalışmak** – HTML element ağacında hedefleme yapabilmek ve istenen etiket yapısına dinamik özellikler ekleyebilmek.
-* **#7 CSS3 | Kutu Özellikleri (Box Model) Kullanımı** – Web tasarımının temeli olan `margin`, `padding`, `width` ve `height` kavramlarının derinlemesine incelenmesi.
+### ✍️ Kod Düzeni ve Metin Biçimlendirme
+* **#4** | Açıklama Satırları (Yorum Satırı) ile Çalışmak ve Genel Font Özellikleri (`font-family`, `font-size`, `font-weight`)
+
+### 🎯 CSS Seçiciler (Selectors)
+* **#5** | CSS ile Class (Sınıf) ve ID Kullanımı, Aralarındaki Kritik Farklar
+* **#6** | CSS Seçiciler (Selectors) ile Çalışmak: İstediğimiz HTML Etiket Yapısını Hedeflemek ve Stil Özellikleri Eklemek
+
+### 📦 Kutu Modeli (Box Model)
+* **#7** | CSS Kutu Özellikleri: Elementlerin Alan Yönetimi (`margin`, `padding`, `width`, `height`) ve Box Model Kavramı
 
 ---
 
-## 🎯 Uygulama Ödevleri (Tasks)
+## 🎯 Bölüm Sonu Projeleri (Ödevler)
 
 Öğrenilen teorik bilgilerin pratiğe dökülmesi amacıyla hazırlanan 3 adet görev:
 
@@ -52,8 +55,10 @@ Yıllar içinde evrilen ve bugünkü minimalist haline kavuşan modern Google an
 
 ---
 
-## 💻 Nasıl İnceleyebilirsiniz?
+## 🛠️ Kurulum ve Çalıştırma
 
-1. Bu depoyu bilgisayarınıza klonlayın:
+Projeleri yerel bilgisayarınızda görüntülemek ve üzerinde çalışmak için aşağıdaki adımları takip edebilirsiniz:
+
+1. Depoyu klonlayın:
    ```bash
    git clone [https://github.com/kullanici_adi/repo_adi.git](https://github.com/kullanici_adi/repo_adi.git)

@@ -79,5 +79,22 @@ Bu klasör, web sayfalarına dinamizm kazandırmak, mantıksal algoritmalar kurm
 
 Klasör içerisindeki teorik bilgileri pekiştirmek amacıyla öğrencilere sunulan iki büyük pratik çalışma:
 
-1. **Ödev 1 - JavaScript Saat ve Karşılama Ekranı:** Kullanıcıyı dinamik bir girdiyle karşılayan, tarayıcıda anlık saat ve gün bilgisini canlı olarak güncelleyen arayüz çalışması.
-2. **Ödev 2 - JavaScript ile To-Do List:** Element ekleme, silme ve yapıldı (`checked`) olarak işaretleme fonksiyonlarına sahip; Bootstrap Toast ile validasyon uyarıları sunan ve Local Storage ile verileri tarayıcı hafazasında tutan durum yönetimli web uygulaması.
+### 🛠️ Ödev 1: JavaScript Saat ve Karşılama Ekranı
+Kullanıcıyı dinamik bir girdiyle karşılayan, tarayıcıda anlık saat ve gün bilgisini canlı olarak güncelleyen arayüz çalışması.
+
+![Görev 1 Ekran Görüntüsü](/img/Javascript-gorev-1.png)
+
+### 📜 Ödev 2: JavaScript ile To-Do List
+Element ekleme, silme ve yapıldı (`checked`) olarak işaretleme fonksiyonlarına sahip; Bootstrap Toast ile validasyon uyarıları sunan ve Local Storage ile verileri tarayıcı hafazasında tutan durum yönetimli web uygulaması.
+
+![Görev 2 Ekran Görüntüsü](/img/Javascript-gorev-2.png)
+
+---
+
+## 🛠️ Kurulum ve Çalıştırma
+
+Projeleri yerel bilgisayarınızda görüntülemek ve üzerinde çalışmak için aşağıdaki adımları takip edebilirsiniz:
+
+1. Depoyu klonlayın:
+   ```bash
+   git clone [https://github.com/kullanici_adi/repo_adi.git](https://github.com/kullanici_adi/repo_adi.git)

@@ -20,91 +20,66 @@ Kariyerimi **Full Stack Developer** olarak ilerletirken, bir konuyu öğretmenin
 ### 📂 [01-HTML-Fundamentals](./01-HTML-Fundamentals)
 *Web'in iskeletini, erişilebilir ve semantik yapılarla kurmaya odaklanır.*
 
-* **📖 Öğrenilen Konular & Temel Başlıklar:**
-    1. **Modern Standartlar:** 
-    2. **Semantik Web (SEO):** 
-    3. **Metin ve İçerik Yönetimi:** 
-    4. **Veri ve Bağlantı Yapıları:** 
-    5. **Element Davranışları:** 
-    6. **Geliştirici Pratikleri:** 
-
-* **🎯 Uygulamalar ve Ödevler:**
-    * **Ödev 1 (Kişisel Profil ve Başlık Hiyerarşisi):** 
-    * **Ödev 2 (Gelişmiş Medya ve İç İçe Listeler):** 
-    * **Ödev 3 (Yemek Tarifi):** 
-    * **Bölüm Sonu Çalışması (Kişisel Bilgi Sayfası):** 
-
+## 📚 Ders İçeriği ve Konu Başlıkları
+### 💡 HTML Dünyasına Giriş
+### 📝 Metin ve Liste Yapıları
+### 🔗 Medya ve Bağlantı Yönetimi
+### 🏗️ Yapısal ve Semantik HTML
+## 🎯 Bölüm Sonu Çalışmaları (Ödevler)
+### 📝 Ödev 1 - İlk Web Sayfamızı Oluşturmak
+### 📝 Ödev 2 - Kişisel Sayfamızı Detaylandırmak
+### 📝 Ödev 3 - HTML Elementleri ile Yemek Tarifi Sitesi
 ---
 
 ### 📂 [02-CSS-Fundamentals](./02-CSS-Fundamentals)
 *Görsel tasarım, seçiciler ve modern yerleşim düzenlerine odaklanır.*
 
-* **📖 Öğrenilen Konular & Temel Başlıklar:**
-    1. **Temel CSS Giriş:** 
-    2. **Stil Yönetim Yöntemleri:** 
-    3. **Seçiciler (Selectors):** 
-    4. **Kutu Modeli (Box Model):** 
-    5. **Tipografi & Düzen:** 
-
-* **🎯 Uygulama Ödevleri:**
-    * **Ödev 1 (Çok Sayfalı Web Sitesi Tasarımı):** 
-    * **Ödev 2 (Geçmişe Yolculuk: Google 1998):** 
-    * **Ödev 3 (Günümüz Dünyası: Modern Google):** 
-
+## 📚 Ders İçeriği ve Konu Başlıkları
+### 💡 CSS Dünyasına Giriş ve Entegrasyon
+### ✍️ Kod Düzeni ve Metin Biçimlendirme
+### 🎯 CSS Seçiciler (Selectors)
+### 📦 Kutu Modeli (Box Model)
+## 🎯 Bölüm Sonu Projeleri (Ödevler)
+### 🛠️ Ödev 1: Çok Sayfalı Web Sitesi Tasarımı
+### 📜 Ödev 2: Geçmişe Yolculuk (Google 1998 Ana Sayfası)
+### 🌐 Ödev 3: Günümüz Dünyası (Modern Google Ana Sayfası)
 ---
 
 ### 📂 [03-JavaScript-Fundamentals](./03-JavaScript-Fundamentals)
 *Web sayfalarına dinamizm kazandırmaya, algoritma mantığı kurmaya ve veri yönetimini anlamaya odaklanır.*
 
-* **📖 Öğrenilen Konular & Temel Başlıklar:**
-    1. **JavaScript Dünyası & Değişkenler:** 
-    2. **Veri Türleri & Manipülasyon:** 
-    3. **Document Object Model (DOM):** 
-    4. **Karar Yapıları & Koşullar:** 
-    5. **Fonksiyonlar (Functions):** 
-    6. **Tarayıcı Depolama (LocalStorage):** 
-    7. **Form Yönetimi:** 
-    8. **Diziler (Arrays) & Döngüler:** 
-    9. **Nesne Oluşturma (Objects):** 
-    10. **Hata Yönetimi & Senkronizasyon:** 
-
-* **🎯 Uygulamalar ve Ödevler:**
-    * **Ödev 1 (Dinamik Saat ve Karşılama Ekranı):** 
-    * **Ödev 2 (Gelişmiş To-Do List / Yapılacaklar Listesi):** 
-    * **UX & UI Geliştirmeleri (Bootstrap Toast):** 
-    * **Bonus Etap (Hafıza Yönetimi):** 
+## 📚 Ders İçeriği ve Konu Başlıkları
+### 💡 JavaScript Nedir?
+### 📦 Değişkenlerle Çalışmak (#2)
+### 🌐 DOM (Document Object Model) ile Çalışmak
+### ⚖️ Karar Yapıları ve Koşullar
+### ⚙️ Fonksiyonlar (Functions)
+### 💾 LocalStorage (Tarayıcı Depolama)
+### 📑 Form Yönetimi
+### 🗂️ Dizi (Array) Veri Tipiyle Çalışmak
+### 🔄 Döngüler (Loops)
+### 💎 Nesne (Object) Yapısı
+### ⚠️ Hata Yönetimi
+### 📡 Fetch API (Asenkron Veri Transferi)
+## 🎯 Bölüm Sonu Projeleri (Ödevler)
+### 🛠️ Ödev 1: JavaScript Saat ve Karşılama Ekranı
+### 📜 Ödev 2: JavaScript ile To-Do List
 
 ---
 
 ### 📂 [04-Bootstrap-Fundamentals](./04-Bootstrap-Fundamentals)
 *Hazır bileşenler ve modern grid sistemleri kullanarak hızlı, responsive arayüzler geliştirmeye odaklanır.*
 
-* **📖 Eğitim İçerik Tablosu:**
-
-    | No | Ders Başlığı |
-    | :---: | :--- | :--- |
-    | **#1** | **Bootstrap Giriş** |
-    | **#2** | **12'lik Izgara (Grid)** |
-    | **#3** | **Layout İskeleti** |
-    | **#4** | **Responsive Kırılımlar** |
-    | **#5** | **Hizalama Sınıfları** |
-    | **#6** | **Tasarım Standartları** |
-    | **#7** | **Responsive Görünürlük** |
-    | **#8** | **Gelişmiş Grid Pratikleri** |
-    | **#9** | **UI Components** |
-
-* **🎯 Uygulama Ödevleri ve Klonlar:**
-    * **Ödev 1 (Müzik Aleti Satış Sitesi):** 
-    * **Ödev 2 (Instagram Arayüz Klonu):** 
-    * **Ödev 3 (LinkedIn Arayüz Klonu):** 
-    * **Ödev 4 (Medium Arayüz Klonu):** 
-
----
-
-## 💡 Öne Çıkan Özellikler
-- **Yapılandırılmış Öğrenme:** Her modül, yeni başlayanlar için mantıksal ve pedagojik bir sıra izler.
-- **Pratik Odaklılık:** Ödevler ve projeler, gerçek dünyadaki UI (User Interface) bileşenlerini ve popüler platformları taklit edecek şekilde tasarlanmıştır.
-- **Eğitmenlik Deneyimi:** Lise öğrencilerine yönelik aktif eğitmenlik süresince geliştirilen teknik iletişim, karmaşık konuları basitleştirme ve dökümantasyon becerisi.
+## 📚 Ders İçeriği ve Konu Başlıkları
+### 💡 Bootstrap Dünyasına Giriş
+### 📐 Izgara (Grid) Sistemi ve Responsive Tasarım
+### 🛠️ Pratik Uygulama ve Stil Yönetimi
+### 🔀 Gelişmiş Kolon ve Düzen Yönetimi
+## 🎯 Bölüm Sonu Projeleri (Ödevler)
+### 🎸 Ödev 1: Müzik Aleti Satış Sitesi (Bootstrap Modernizasyonu)
+### 📸 Ödev 2: Instagram Arayüz Klonu (Clone)
+### 💼 Ödev 3: LinkedIn Arayüz Klonu (Clone)
+### 📝 Ödev 4: Medium Arayüz Klonu (Clone)
 
 ---
 
