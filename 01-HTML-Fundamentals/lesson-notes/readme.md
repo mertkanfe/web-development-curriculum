@@ -1,87 +1,94 @@
-# 📂 HTML Fundamentals (Temelleri)
+# 📂 HTML Fundamentals
 
-Bu klasör, modern web geliştirmenin temel taşı olan HTML5 standartlarını kavramak, semantik web sayfaları inşa etmek ve tarayıcıların yapısal iskeletini anlamak amacıyla hazırlanan ders notlarını, kod örneklerini ve pekiştirme egzersizlerini barındırmaktadır.
-
----
-
-## 📚 Ders İçeriği ve Konu Başlıkları
-
-### 💡 HTML Dünyasına Giriş
-* **#1** | HTML5 Nedir? Evrimi ve Web Standartlarındaki Rolü
-* **#2** | HTML Etiketleri (Tags) Nedir? Element ve Öznitelik (Attribute) Kavramları
-* **#3** | Başlık Etiketleri (`<h1>` - `<h6>`) ve Arama Motorları (SEO) İçin Önemi
-* **#4** | İlk Sayfam: Temel Bir HTML Dosyasının Canlıya Alınması
-* **#5** | Açıklama Satırları (Yorum Satırı) Kullanımı ve Kod Düzenindeki Rolü
-
-### 📝 Metin ve Liste Yapıları
-* **#6** | Başlık ve Paragraflar (`<p>`) ile İçerik Düzenleme
-* **#7** | Listelerle Çalışmak: Sıralı (`<ol>`) ve Sırasız (`<ul>`) Liste Kullanımı
-* **#8** | Emmet Prefabrikasyonu ile Hızlı ve Verimli HTML Yazım Teknikleri
-
-### 🔗 Medya ve Bağlantı Yönetimi
-* **#9** | Görsellerle Çalışmak (`<img>` Etiketi, `src` ve `alt` Öznitelikleri)
-* **#10** | Linkler: Sayfa İçi, Sayfalar Arası ve Dış Bağlantı Köprüleri Kurmak (`<a>` ve `target="_blank"`)
-
-### 🏗️ Yapısal ve Semantik HTML
-* **#11** | Blok (Block) ve Satır İçi (Inline) Elementler Arasındaki Farklar ve Yerleşim Kuralları
-* **#12** | Ekstra Özellikler Eklemek: Küresel Öznitelikler (`id`, `class`, `style`, `title`)
-* **#13** | HTML Genel Yapısı (`<!DOCTYPE html>`, `<html>`, `<head>`, `<body>`, Metatalar)
-* **#14** | Semantik HTML (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`) ve Erişilebilirlik
-* **#15** | Diğer Önemli HTML Etiketleri (Vurgu Metinleri `<strong>`, `<em>`, Tablolar `<table>` ve Biçimlendirmeler)
+This folder contains lesson notes, code examples, and reinforcement exercises prepared to understand the fundamentals of HTML5 standards, build semantic web pages, and understand the structural skeleton of browsers.
 
 ---
 
-## 🎯 Bölüm Sonu Çalışmaları (Ödevler)
+## 📚 Lesson Content and Topics
 
-Klasör içerisindeki teorik bilgileri pekiştirmek amacıyla öğrencilere sunulan üç büyük pratik çalışma:
+### 💡 Introduction to the World of HTML
+* **#1** | What is HTML5? Its Evolution and Role in Web Standards
+* **#2** | What Are HTML Tags? Concepts of Elements and Attributes
+* **#3** | Heading Tags (`<h1>` - `<h6>`) and Their Importance for Search Engines (SEO)
+* **#4** | My First Page: Bringing a Basic HTML File to Life
+* **#5** | Using Comment Lines and Their Role in Code Organization
 
-### 📝 Ödev 1 - İlk Web Sayfamızı Oluşturmak
-Harika konular öğrendikten sonra sıra geldi ilk web sayfamızı tasarlamaya! Bu ödevde, temel HTML etiketlerini kullanarak kendinizi tanıtan basit ve temiz bir yapı oluşturmanız beklenmektedir.
+### 📝 Text and List Structures
+* **#6** | Organizing Content with Headings and Paragraphs (`<p>`)
+* **#7** | Working with Lists: Ordered (`<ol>`) and Unordered (`<ul>`) Lists
+* **#8** | Fast and Efficient HTML Writing Techniques with Emmet Abbreviation
 
-**Gereksinimler:**
-* Site açıldığında adınız ve soyadınız ana başlık (`<h1>`) şeklinde gösterilmelidir.
-* Ad-Soyadın hemen altında alt başlık (`<h2>`) olarak **"Hakkımda"** yazmalıdır.
-* Bu başlığın altında bir paragraf (`<p>`) içerisinde neler yaptığınızı ve nelerden hoşlandığınızı anlatmalısınız.
-* Web sitenizi kaydederken ana dosya adı olarak mutlaka `index.html` seçilmelidir.
-* Yazdığınız kod bloklarını ve ne işe yaradıklarını açıklayan **yorum satırları** eklenmelidir.
+### 🔗 Media and Link Management
+* **#9** | Working with Images (`<img>` Tag, `src` and `alt` Attributes)
+* **#10** | Links: Creating In-Page, Inter-Page, and External Connection Bridges (`<a>` and `target="_blank"`)
 
-![Görev 1 Ekran Görüntüsü](/img/Html-gorev-1.png)
-
----
-
-### 📝 Ödev 2 - Kişisel Sayfamızı Detaylandırmak
-İlk ödevde attığımız temel üzerine, yeni öğrendiğimiz medya, listeler ve link yapılarını ekleyerek kişisel sayfamızı zenginleştirmeye ve geliştirmeye devam ediyoruz.
-
-**Gereksinimler:**
-* Sayfanıza kendinizi veya ilgi alanınızı yansıtan bir adet resim (`<img>`) ekleyin ve bu resmin altına açıklayıcı bir metin yazın.
-* Sevdiğiniz film, dizi ve kitapları temsil eden başlıklar oluşturun.
-* İçerikleri listelerken; ana kategoriler (Film, Dizi, Kitap) **Sıralı Liste (`<ol>`)**, bu kategorilerin içindeki maddeler ise **Bullet Liste / Sırasız Liste (`<ul>`)** olmalıdır.
-* Listelediğiniz film ve dizilerin en az bir tanesine **IMDb linki**, kitapların en az bir tanesine de **Goodreads linki** yönlendirmesi (`<a>`) ekleyin.
-* Kurduğunuz sayfa düzeninde blok (block) ve satır içi (inline) element özelliklerine dikkat ederek kullanım sergileyin.
-
-![Görev 2 Ekran Görüntüsü](/img/Html-gorev-2.png)
+### 🏗️ Structural and Semantic HTML
+* **#11** | Differences Between Block and Inline Elements and Layout Rules
+* **#12** | Adding Extra Features: Global Attributes (`id`, `class`, `style`, `title`)
+* **#13** | General HTML Structure (`<!DOCTYPE html>`, `<html>`, `<head>`, `<body>`, Metadata)
+* **#14** | Semantic HTML (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`) and Accessibility
+* **#15** | Other Important HTML Tags (Text Emphasis `<strong>`, `<em>`, Tables `<table>`, and Formatting)
 
 ---
 
-### 📝 Ödev 3 - HTML Elementleri ile Yemek Tarifi Sitesi
-Bu ödevde, en sevdiğiniz bir yemek ya da tatlının tarifini içeren profesyonel yapıda bir web sayfasını, şu ana kadar öğrendiğiniz tüm HTML etiket varyasyonlarını kullanarak kodlamanız istenmektedir.
+## 🎯 End-of-Section Exercises (Assignments)
 
-**Zorunlu Kullanılması Gereken HTML Etiketleri:**
-* **Yapısal Etiketler:** `<!DOCTYPE html>`, `<html>`, `<head>`, `<body>`, `<meta charset="UTF-8">`
-* **Metin Biçimlendirme:** `<h1>` (Ana yemek başlığı), `<h2>` (Malzemeler ve Hazırlanış alt başlıkları), `<p>` (Tarif açıklamaları ve giriş yazısı)
-* **Listeler:** `<ul>` (Malzemelerin listelenmesi için sırasız liste), `<ol>` (Adım adım hazırlanış aşamaları için sıralı liste)
-* **Vurgu:** Önemli ipuçları veya süreler için `<strong>` (Kalın yazı) veya `<em>` (İtalik yazı) kullanımı
-* **Medya ve Link:** `<img>` (Yemeğin iştah açıcı bir fotoğrafı), `<a>` (Tarifin alındığı kaynak siteye giden köprü bağlantı)
-* **Tablo (Opsiyonel / Ek Puan):** `<table>`, `<tr>`, `<td>` etiketleri kullanılarak yemeğin besin değerleri (Kalori, Protein vb.) veya hazırlama/pişirme sürelerini gösteren şık bir tablo yapısı.
+Three major practical exercises are provided to reinforce the theoretical knowledge in the folder:
 
-![Görev 3 Ekran Görüntüsü](/img/Html-gorev-3.png)
+### 📝 Assignment 1 - Creating Our First Web Page
+
+After learning some great topics, it's time to design our first web page! In this assignment, you are expected to create a simple and clean structure that introduces yourself using basic HTML tags.
+
+**Requirements:**
+
+* Your first and last name must be displayed as the main heading (`<h1>`) when the site is opened.
+* Directly below your name, **"About Me"** should be displayed as a subheading (`<h2>`).
+* Under this heading, you should describe what you do and what you enjoy in a paragraph (`<p>`).
+* When saving your website, the main file must be named `index.html`.
+* You must add **comment lines** explaining the code blocks you have written and what they do.
+
+![Assignment 1 Screenshot](/img/Html-gorev-1.png)
 
 ---
 
-## 🛠️ Kurulum ve Çalıştırma
+### 📝 Assignment 2 - Expanding Our Personal Page
 
-Projeleri yerel bilgisayarınızda görüntülemek ve üzerinde çalışmak için aşağıdaki adımları takip edebilirsiniz:
+Building on the foundation of the first assignment, we will continue enriching and improving our personal page by adding the media, list, and link structures we have recently learned.
 
-1. Depoyu klonlayın:
+**Requirements:**
+
+* Add one image (`<img>`) that reflects yourself or your interests to your page, and write a descriptive text below this image.
+* Create headings representing your favorite movies, TV series, and books.
+* When listing the content, the main categories (Movie, TV Series, Book) must be an **Ordered List (`<ol>`)**, while the items within these categories must be **Bullet / Unordered Lists (`<ul>`)**.
+* Add an **IMDb link** to at least one of the movies or TV series you have listed, and a **Goodreads link** (`<a>`) to at least one of the books.
+* Pay attention to the characteristics of block and inline elements in your page layout and demonstrate their proper usage.
+
+![Assignment 2 Screenshot](/img/Html-gorev-2.png)
+
+---
+
+### 📝 Assignment 3 - Recipe Website with HTML Elements
+
+In this assignment, you are asked to code a professionally structured web page containing the recipe for your favorite dish or dessert, using all the HTML tag variations you have learned so far.
+
+**Mandatory HTML Tags to Use:**
+
+* **Structural Tags:** `<!DOCTYPE html>`, `<html>`, `<head>`, `<body>`, `<meta charset="UTF-8">`
+* **Text Formatting:** `<h1>` (Main dish title), `<h2>` (Ingredients and Preparation subheadings), `<p>` (Recipe descriptions and introduction)
+* **Lists:** `<ul>` (for listing ingredients), `<ol>` (for step-by-step preparation instructions)
+* **Emphasis:** Use `<strong>` (bold text) or `<em>` (italic text) for important tips or durations
+* **Media and Link:** `<img>` (an appetizing photo of the dish), `<a>` (a hyperlink to the source website where the recipe was obtained)
+* **Table (Optional / Extra Credit):** Create a stylish table using `<table>`, `<tr>`, and `<td>` to display the dish's nutritional values (Calories, Protein, etc.) or preparation/cooking times.
+
+![Assignment 3 Screenshot](/img/Html-gorev-3.png)
+
+---
+
+## 🛠️ Installation and Running
+
+Follow the steps below to view and work on the projects on your local computer:
+
+1. Clone the repository:
+
    ```bash
-   git clone [https://github.com/kullanici_adi/repo_adi.git](https://github.com/kullanici_adi/repo_adi.git)
+   git clone https://github.com/kullanici_adi/repo_adi.git
