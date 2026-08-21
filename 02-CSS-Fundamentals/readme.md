@@ -1,64 +1,75 @@
-# 📂 CSS3 Fundamentals (Temelleri)
+# 📂 CSS3 Fundamentals
 
-Bu klasör, web sayfalarını görsel olarak şekillendirmek, modern arayüz tasarımları oluşturmak ve sayfa yerleşim (layout) kurallarını kavramak amacıyla hazırlanan ders notlarını, kod örneklerini ve pekiştirme egzersizlerini barındırmaktadır.
-
----
-
-## 📚 Ders İçeriği ve Konu Başlıkları
-
-### 💡 CSS Dünyasına Giriş ve Entegrasyon
-* **#1** | CSS Nedir? Web Sayfalarındaki Rolü ve HTML ile İlişkisi
-* **#2** | Inline CSS (Satır İçi CSS) Nasıl Kullanılır? Avantaj ve Dezavantajları
-* **#3** | CSS Yöntemleri: Inline (Etikete Özel), Internal (Sayfaya Özel) ve External (Harici CSS Dosyası) Kullanımı ve Öncelik Sıralamaları (Specificity)
-
-### ✍️ Kod Düzeni ve Metin Biçimlendirme
-* **#4** | Açıklama Satırları (Yorum Satırı) ile Çalışmak ve Genel Font Özellikleri (`font-family`, `font-size`, `font-weight`)
-
-### 🎯 CSS Seçiciler (Selectors)
-* **#5** | CSS ile Class (Sınıf) ve ID Kullanımı, Aralarındaki Kritik Farklar
-* **#6** | CSS Seçiciler (Selectors) ile Çalışmak: İstediğimiz HTML Etiket Yapısını Hedeflemek ve Stil Özellikleri Eklemek
-
-### 📦 Kutu Modeli (Box Model)
-* **#7** | CSS Kutu Özellikleri: Elementlerin Alan Yönetimi (`margin`, `padding`, `width`, `height`) ve Box Model Kavramı
+This folder contains course notes, code examples, and reinforcement exercises prepared to learn how to visually style web pages, create modern interfaces, and understand page layout rules.
 
 ---
 
-## 🎯 Bölüm Sonu Projeleri (Ödevler)
+## 📚 Course Content and Topics
 
-Öğrenilen teorik bilgilerin pratiğe dökülmesi amacıyla hazırlanan 3 adet görev:
+### 💡 Introduction to CSS and Integration
 
-### 🛠️ Ödev 1: Çok Sayfalı Web Sitesi Tasarımı
-Sıfırdan modern ve tasarımsal açıdan göze hoş gelen çok sayfalı bir web sitesi prototipi oluşturma görevi.
-* **Sayfa Yapısı:** Menü kısmında linkler (`<a>`) verilerek sayfalar arası geçiş sağlanmalı.
-* **Renk & Font:** Renk paletleri için [Colorhunt](https://colorhunt.co/), fontlar için [Google Fonts](https://fonts.google.com/) entegrasyonu deneyimlenmeli.
-* **CSS Kuralları:** DRY (Don't Repeat Yourself) prensibine sadık kalınarak kendini tekrar eden kodlardan kaçınılmalı (Gerekirse External CSS tercih edilmeli).
-* **İpucu:** Ana sayfadaki listelerin noktalarını ortalamak için `list-style-position: inside;` kullanılabilir.
+* **#1** | What is CSS? Its Role in Web Pages and Its Relationship with HTML
+* **#2** | How to Use Inline CSS? Advantages and Disadvantages
+* **#3** | CSS Methods: Using Inline (Element-Specific), Internal (Page-Specific), and External CSS Files, and Their Priority Order (Specificity)
 
-![Görev 1 Ekran Görüntüsü](/img/Css-gorev-1.png)
+### ✍️ Code Organization and Text Formatting
 
+* **#4** | Working with Comments and General Font Properties (`font-family`, `font-size`, `font-weight`)
 
-### 📜 Ödev 2: Geçmişe Yolculuk (Google 1998 Ana Sayfası)
-İnternet arşivi olan Wayback Machine üzerindeki verilerden yararlanarak, Google'ın 1998 yılındaki ilk ham sürümünü CSS yetenekleri ile klonlama görevi.
-* **Amaç:** Temel HTML/CSS becerilerini saf tasarım yeteneğiyle harmanlamak.
-* **Görsel Materyal:** Görevde [Google 1998 Logosu](https://web.archive.org/web/19990504112211im_/http://www.google.com/google.jpg) kullanılmalıdır.
-* **Kural:** Butonların çalışması zorunlu değildir, önemli olan tasarımsal benzerlik yakalamak ve kod içerisinde bolca açıklama satırına (`/* yorum */`) yer vermektir.
+### 🎯 CSS Selectors
 
-![Görev 2 Ekran Görüntüsü](/img/Css-gorev-2.png)
+* **#5** | Using Classes and IDs in CSS and the Critical Differences Between Them
+* **#6** | Working with CSS Selectors: Targeting the Desired HTML Element Structure and Adding Style Properties
 
-### 🌐 Ödev 3: Günümüz Dünyası (Modern Google Ana Sayfası)
-Yıllar içinde evrilen ve bugünkü minimalist haline kavuşan modern Google ana sayfasını (2019-Günümüz şablonu) CSS ile yeniden inşa etme görevi.
-* **Referans Link:** [Google Wayback Arşivi](https://web.archive.org/web/20191130234759if_/https://www.google.com/)
-* **Amaç:** Arama çubuğu, buton yerleşimleri, hizalamalar ve modern web elementlerinin konumlandırılmasını (Box Model mantığını) kusursuzlaştırmak.
-* **Kural:** Tasarımın aslına olabildiğince sadık kalınmalı ve temiz kod prensipleriyle yorum satırları ihmal edilmemelidir.
+### 📦 Box Model
 
-![Görev 3 Ekran Görüntüsü](/img/Css-gorev-3.png)
+* **#7** | CSS Box Properties: Area Management of Elements (`margin`, `padding`, `width`, `height`) and the Box Model Concept
 
 ---
 
-## 🛠️ Kurulum ve Çalıştırma
+## 🎯 End-of-Section Projects (Assignments)
 
-Projeleri yerel bilgisayarınızda görüntülemek ve üzerinde çalışmak için aşağıdaki adımları takip edebilirsiniz:
+3 tasks prepared to put the theoretical knowledge into practice:
 
-1. Depoyu klonlayın:
+### 🛠️ Assignment 1: Multi-Page Website Design
+
+Create a modern and visually appealing multi-page website prototype from scratch.
+
+* **Page Structure:** Navigation links (`<a>`) should be provided in the menu to enable navigation between pages.
+* **Colors & Fonts:** Experiment with [Colorhunt](https://colorhunt.co/) for color palettes and [Google Fonts](https://fonts.google.com/) for font integration.
+* **CSS Rules:** Follow the DRY (Don't Repeat Yourself) principle and avoid repetitive code (use External CSS when necessary).
+* **Tip:** `list-style-position: inside;` can be used to center the bullet points of lists on the homepage.
+
+![Assignment 1 Screenshot](/img/Css-gorev-1.png)
+
+### 📜 Assignment 2: A Journey into the Past (Google 1998 Homepage)
+
+Recreate Google's first raw version from 1998 using CSS capabilities, based on data available on the Internet Archive's Wayback Machine.
+
+* **Goal:** Combine basic HTML/CSS skills with pure design ability.
+* **Visual Material:** The [Google 1998 Logo](https://web.archive.org/web/19990504112211im_/http://www.google.com/google.jpg) provided in the assignment should be used.
+* **Rule:** The buttons do not have to be functional; the important thing is to achieve visual similarity and include plenty of comments (`/* comments */`) in the code.
+
+![Assignment 2 Screenshot](/img/Css-gorev-2.png)
+
+### 🌐 Assignment 3: The Modern World (Modern Google Homepage)
+
+Rebuild the modern Google homepage (2019–Present template), which has evolved over the years into its current minimalist form, using CSS.
+
+* **Reference Link:** [Google Wayback Archive](https://web.archive.org/web/20191130234759if_/https://www.google.com/)
+* **Goal:** Perfect the positioning of the search bar, button layouts, alignments, and modern web elements by mastering the Box Model concept.
+* **Rule:** The design should remain as faithful to the original as possible, and comments should not be neglected in favor of clean coding principles.
+
+![Assignment 3 Screenshot](/img/Css-gorev-3.png)
+
+---
+
+## 🛠️ Installation and Running
+
+Follow the steps below to view the projects locally and work on them:
+
+1. Clone the repository:
+
    ```bash
-   git clone [https://github.com/kullanici_adi/repo_adi.git](https://github.com/kullanici_adi/repo_adi.git)
+   git clone https://github.com/kullanici_adi/repo_adi.git
+   ```
